@@ -3213,7 +3213,6 @@ GameObject:
   - component: {fileID: 1119382179}
   - component: {fileID: 1119382184}
   - component: {fileID: 1119382183}
-  - component: {fileID: 1119382185}
   - component: {fileID: 1119382186}
   m_Layer: 0
   m_Name: Enemy
@@ -3345,6 +3344,7 @@ MonoBehaviour:
   chaseTarget: {fileID: 0}
   navMeshAgent: {fileID: 1119382183}
   col: {fileID: 0}
+  mouselook_s: {fileID: 0}
   colliderRadius: 6
   rangeOfPatrolling: 20
   centerOfPatrolArea: {fileID: 1148338281}
@@ -3353,6 +3353,7 @@ MonoBehaviour:
   radius: 20
   flashlightRadius: 40
   angle: 80
+  previousAngle: 0
   playerRef: {fileID: 631359489}
   targetMask:
     serializedVersion: 2
@@ -3361,19 +3362,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1792
   canSeePlayer: 0
---- !u!135 &1119382185
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1119382178}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 6
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1119382186
 Rigidbody:
   m_ObjectHideFlags: 0

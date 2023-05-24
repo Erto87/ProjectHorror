@@ -30,7 +30,7 @@ public class StatePatternEnemy : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     [HideInInspector]
     public SphereCollider col;
-    // public MouseLook_S mouselook_s;
+    public MouseLook_S mouselook_s;
     [SerializeField]
     private float colliderRadius;//enemyn sphere colliderin säteen pituus
 
@@ -43,6 +43,7 @@ public class StatePatternEnemy : MonoBehaviour
     private float flashOffradius;
     [Range(0,360)]
     public float angle;
+    public float previousAngle;
 
     public GameObject playerRef;
 
@@ -65,13 +66,13 @@ public class StatePatternEnemy : MonoBehaviour
     void Start()
     {
         currentState = patrolState; //kun peli alkaa kerrotaan viholliselle että tila on patrol state.
-        col = GetComponent<SphereCollider>();
-        col.radius = colliderRadius;
-        // mouselook_s = GameObject.FindWithTag("MainCamera").GetComponent<MouseLook_S>();
+
+        mouselook_s = GameObject.FindWithTag("MainCamera").GetComponent<MouseLook_S>();
         playerRef = GameObject.FindGameObjectWithTag("Player");
         PatrolAreaCenters.Add(centerOfPatrolArea);
         StartCoroutine(FOVRoutine());
-        flashOffradius = radius;
+
+        previousAngle = angle;
     }
 
     private IEnumerator FOVRoutine()
@@ -120,23 +121,15 @@ public class StatePatternEnemy : MonoBehaviour
     {
         currentState.UpdateState();
 
-        // if (mouselook_s.flashlightOn && col.radius < 10f)
-        // {
-        //     col.radius = colliderRadius * 2;
-        // }
-        // else if (!mouselook_s.flashlightOn)
-        // {
-        //     col.radius = colliderRadius;
-        // }
+        if (mouselook_s.flashlightOn)
+        {
 
-        // if(mouselook_s.flashlightOn)//kulman näköetäisyys kasvaa myös jos flashlight päällä
-        // {
-        //     radius = flashlightRadius;
-        // }
-        // else if(!mouselook_s.flashlightOn)//ja palaa aiempaan arvoon kun flashlight pois päältä
-        // {
-        //     radius = flashOffradius;
-        // }
+            angle = 360;
+        }
+        else if (!mouselook_s.flashlightOn)
+        {
+            angle = previousAngle;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
