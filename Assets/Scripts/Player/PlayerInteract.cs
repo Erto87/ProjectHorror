@@ -31,14 +31,14 @@ public class PlayerInteract : MonoBehaviour
     void Update()
     {
         playerUI.UpdateText(string.Empty);
-        //create a ray at the center of the camera, shooting outwards
-        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
-        Debug.DrawRay(ray.origin, ray.direction * distance);
-        RaycastHit hitInfo; //cariable to store collision information.
+        Ray ray = new Ray(cam.transform.position, cam.transform.forward); // Luodaan säde, joka lähtee kameran sijainnista eteenpäin.
+        Debug.DrawRay(ray.origin, ray.direction * distance); //piirretään säde.
+        RaycastHit hitInfo; // tallentaa osuman tiedon
         if(Physics.Raycast(ray, out hitInfo, distance, mask))
         {
             if (hitInfo.collider.GetComponent<Interactable>() != null)
             {
+                // Jos törmätyllä objektilla on Interactable-komponentti, tallennetaan se interactable-muuttujaan.
                 Interactable interactable = hitInfo.collider.GetComponent<Interactable>();
                 playerUI.UpdateText(interactable.promptMessage);
                 if(inputManager.onFoot.Interact.triggered)

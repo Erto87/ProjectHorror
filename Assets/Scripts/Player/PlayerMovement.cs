@@ -18,12 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public bool sprinting;
     public float sprintTimer;
     public Animator animator;
-    // Start is called before the first frame update
     public PlayerHealth playerHealth;
-    
-
-
-
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -33,22 +28,21 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isGrounded = controller.isGrounded;
+        isGrounded = controller.isGrounded; // tarkistaa onko pelaaja maassa
 
         if(lerpCrouch)
         {
             crouchTimer += Time.deltaTime;
             float p = crouchTimer / 1;
             p *= p;
-            if (crouching)
+            if (crouching) // Jos pelaaja kyykk‰‰
             {
              controller.height = Mathf.Lerp(controller.height, 1, p);
                 speed = 3f;
             }
-            else
+            else // Jos pelaaja nousee seisomaan
             {
-
-                controller.height = Mathf.Lerp(controller.height, 2, p);
+               controller.height = Mathf.Lerp(controller.height, 2, p);
                 speed = 5f;
             }
             if (p > 1)
@@ -58,71 +52,46 @@ public class PlayerMovement : MonoBehaviour
             }
             
         }
-        if (playerHealth.playerDead == true)
+        if (playerHealth.playerDead == true) // Jos pelaaja on kuollut, asetetaan animaatio "isDead" p‰‰lle
         {
             Debug.Log("NYT KUOLTIIN");
             animator.SetBool("isDead", true);
             
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && crouching == false) 
+        if (Input.GetKeyDown(KeyCode.LeftShift) && crouching == false)  // Jos pelaaja painaa vasenta Shift-n‰pp‰int‰ ja ei ole kyykyss‰, nopeutetaan pelaajaa
         {
             speed = 8f;
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift) && crouching == false)
-        {
+        if (Input.GetKeyUp(KeyCode.LeftShift) && crouching == false) // Jos pelaaja vapauttaa vasemman Shift-n‰pp‰imen ja ei ole kyykyss‰, palautetaan nopeus normaaliksi
+        { 
             speed = 5f;
         }
 
     }
-
-    // receive the input from the InputManager
     public void ProcessMove(Vector2 input)
     {
-
+        // Lasketaan liikkumissuunta k‰ytt‰en input-vektoria
         Vector3 moveDirection = Vector3.zero;
         moveDirection.x = input.x;
         moveDirection.z = input.y;
-        controller.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime);
-        playerVelocity.y += gravity * Time.deltaTime;
+        
+        controller.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime); // Liikutetaan pelaajaa k‰ytt‰en CharacterControlleria
+        playerVelocity.y += gravity * Time.deltaTime; // P‰ivitet‰‰n pelaajan pystysuuntainen nopeus k‰ytt‰en painovoimaa
+
         if (isGrounded && playerVelocity.y < 0)
             playerVelocity.y = -2f;
         controller.Move(playerVelocity * Time.deltaTime);
         
     }
-
-    //public void Jump()
-    //{
-    //    if (isGrounded)
-    //    {
-    //        playerVelocity.y = Mathf.Sqrt(jumpHeight * -3.0f * gravity);
-    //    }
-
-    //}
-    public void Crouch()
+      public void Crouch()
     {
         crouching = !crouching;
         crouchTimer = 0;
         lerpCrouch = true;
     }
 
-    //public void Sprint()
-    //{
 
-    //    sprinting = !sprinting;
-
-    //    if(sprinting)
-    //    {
-    //        speed = 8;
-
-    //    }
-  
-    //    else
-    //    {
-    //        speed = 5;
-    //    }
-     
-    //}
 
 }
 

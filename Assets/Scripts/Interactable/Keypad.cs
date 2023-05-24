@@ -6,8 +6,8 @@ public class Keypad : Interactable
 {
     [SerializeField]
     private GameObject door;
-    private bool doorOpen;
-   
+    private bool doorOpen; // Tieto siitä, onko ovi auki vai kiinni
+
     void Start()
     {
         
@@ -19,9 +19,10 @@ public class Keypad : Interactable
         
     }
 
-    //this function is where we will desing our interaction using code.
+    
     protected override void Interact()
     {
+        // Vaihdetaan oven tila (avoin/kiinni)
         doorOpen = !doorOpen;
         door.GetComponent<Animator>().SetBool("isOpen", doorOpen);
     }

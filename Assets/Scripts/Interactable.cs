@@ -5,11 +5,10 @@ using UnityEditor;
 
 public abstract class Interactable : MonoBehaviour
 {
-
-    //add or remove an InteractionEvent component to this gameobject.
+    // Lis‰‰ tai poista InteractionEvent-komponentti t‰st‰ peliobjektista.
 
     public bool useEvents;
-    //message displayed to player when looking at an interactable.
+    // Viesti, joka n‰ytet‰‰n pelaajalle vuorovaikutuksen kohteena ollessa.
     [SerializeField]
     public string promptMessage;
 
@@ -17,21 +16,23 @@ public abstract class Interactable : MonoBehaviour
     {
         return promptMessage;
     }
+    // Metodi, joka palauttaa vuorovaikutuksen kohteena ollessa n‰ytett‰v‰n viestin.
+
     public void BaseInteract()
     {
-        if(useEvents)
+        if (useEvents)
         {
             GetComponent<InteractionEvent>().OnInteract.Invoke();
             Interact();
-
         }
-        
     }
+    // Perusmetodi vuorovaikutuksen suorittamiseen.
+    // Jos k‰ytet‰‰n tapahtumia (useEvents), kutsutaan InteractionEvent-komponentin OnInteract-tapahtumaa.
+    // Sen j‰lkeen kutsutaan Interact-metodia.
 
     protected virtual void Interact()
     {
-        //no code this is a template function to be overriden by our subclasses.
+        // Ei koodia t‰ss‰, t‰m‰ on pohjaluokan funktio, joka tulee ylikirjoittaa aliluokissa.
     }
-
-
+    // Suojattu virtual-metodi vuorovaikutuksen toteuttamista varten.
 }

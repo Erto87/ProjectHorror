@@ -24,4 +24,12 @@ public class scenechange : MonoBehaviour
     {
         Application.Quit();
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("juhoscene");
+            SceneManager.LoadScene("JuhoTestScene");
+        }
+    }
 }
