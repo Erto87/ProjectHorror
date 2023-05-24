@@ -17,6 +17,7 @@ public class paintingButton : MonoBehaviour
     private SpriteRenderer rend;
 
 
+
     private void Start() 
     {
         playerClicked = 0;

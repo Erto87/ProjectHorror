@@ -9,10 +9,6 @@ public class PressDoorHandle : MonoBehaviour
 {
 
     public Animator door;
-    // public GameObject lockOB;
-    // public GameObject keyOB;
-
-    // public GameObject lockedText;
     public Collider handleCollider;
 
 
@@ -21,8 +17,9 @@ public class PressDoorHandle : MonoBehaviour
     public AudioSource lockedSound;
     public AudioSource unlockedSound;
 
-    public bool doorisOpen;
-    public bool doorisClosed;
+    public static bool doorisOpen; //mites näistä static? ja sit enemyn trigger scriptis tsekkaa onko open/closed
+    public static bool doorisClosed;
+
 
     private void Start() 
     {
@@ -44,6 +41,8 @@ public class PressDoorHandle : MonoBehaviour
             StartCoroutine(preventAnotherOpen());
             door.SetBool("Open", true);
             door.SetBool("Closed", false);
+            openSound.Play();
+            // AudioManager.instance.PlaySFX("DoorOpen");
 
             doorisOpen = true;
             doorisClosed = false;
@@ -54,12 +53,16 @@ public class PressDoorHandle : MonoBehaviour
             StartCoroutine(preventAnotherOpen());
             door.SetBool("Open", false);
             door.SetBool("Closed", true);
+            closeSound.Play();
+            // AudioManager.instance.PlaySFX("DoorClose");
 
             doorisClosed = true;
             doorisOpen = false;
         }
 
     }
+
+
 
     IEnumerator preventAnotherOpen()
     {

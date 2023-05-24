@@ -10,6 +10,7 @@ public class PressButton : MonoBehaviour
     public UnityEvent unityEvent = new UnityEvent();
     public GameObject button;
     public GameObject player;
+    public Animator anim;
 
     void Start()
     {
@@ -27,7 +28,10 @@ public class PressButton : MonoBehaviour
 
         if (distanceToButton < 3f && Physics.Raycast(ray, out hit) && hit.collider.gameObject == gameObject)
         {   
+            anim = GetComponent<Animator>();
+            anim.SetTrigger("pressed");
             unityEvent.Invoke();
+
             
         }
     }
