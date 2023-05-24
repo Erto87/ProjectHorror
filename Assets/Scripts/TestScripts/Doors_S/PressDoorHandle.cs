@@ -10,6 +10,7 @@ public class PressDoorHandle : MonoBehaviour
 
     public Animator door;
     public Collider handleCollider;
+    public Collider doorsEnemyTrigger;
 
 
     public AudioSource openSound;
@@ -38,6 +39,7 @@ public class PressDoorHandle : MonoBehaviour
         if (doorisClosed)
         {
             handleCollider.enabled = false;
+            doorsEnemyTrigger.enabled = false;
             StartCoroutine(preventAnotherOpen());
             door.SetBool("Open", true);
             door.SetBool("Closed", false);
@@ -69,6 +71,7 @@ public class PressDoorHandle : MonoBehaviour
         yield return new WaitForSeconds(1.05f);
         {
             handleCollider.enabled = true;
+            doorsEnemyTrigger.enabled = true;
 
             // unlocked = true;
             // lockOB.SetActive(false);

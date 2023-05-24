@@ -7,6 +7,7 @@ public class EnemyDoorInteraction : MonoBehaviour
 {
     public Animator door;
     public Collider handleCollider;
+    public Collider doorsEnemyTrigger;
 
 
     public AudioSource openSound;
@@ -21,9 +22,10 @@ public class EnemyDoorInteraction : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            if (PressDoorHandle.doorisClosed)
+            if (PressDoorHandle.doorisClosed && handleCollider.enabled)
             {
                 handleCollider.enabled = false;
+                doorsEnemyTrigger.enabled = false;
                 StartCoroutine(preventAnotherOpen());
                 door.SetBool("Open", true);
                 door.SetBool("Closed", false);
@@ -36,30 +38,32 @@ public class EnemyDoorInteraction : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other) 
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            if (PressDoorHandle.doorisOpen)
-            {
-                handleCollider.enabled = false;
-                StartCoroutine(preventAnotherOpen());
-                door.SetBool("Open", false);
-                door.SetBool("Closed", true);
-                closeSound.Play();
-                // AudioManager.instance.PlaySFX("DoorClose");
+    // private void OnTriggerExit(Collider other) 
+    // {
+    //     if (other.gameObject.CompareTag("Enemy"))
+    //     {
+    //         if (PressDoorHandle.doorisOpen)
+    //         {
+    //             handleCollider.enabled = false;
+    //             // doorsEnemyTrigger.enabled = false;
+    //             StartCoroutine(preventAnotherOpen());
+    //             door.SetBool("Open", false);
+    //             door.SetBool("Closed", true);
+    //             closeSound.Play();
+    //             // AudioManager.instance.PlaySFX("DoorClose");
 
-                PressDoorHandle.doorisClosed = true;
-                PressDoorHandle.doorisOpen = false;
-            }
-        }
-    }
+    //             PressDoorHandle.doorisClosed = true;
+    //             PressDoorHandle.doorisOpen = false;
+    //         }
+    //     }
+    // }
 
     IEnumerator preventAnotherOpen()
     {
         yield return new WaitForSeconds(1.05f);
         {
             handleCollider.enabled = true;
+            doorsEnemyTrigger.enabled = true;
 
             // unlocked = true;
             // lockOB.SetActive(false);
