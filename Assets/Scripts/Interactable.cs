@@ -8,7 +8,7 @@ public abstract class Interactable : MonoBehaviour
     // Lis‰‰ tai poista InteractionEvent-komponentti t‰st‰ peliobjektista.
 
     public bool useEvents;
-    // Viesti, joka n‰ytet‰‰n pelaajalle vuorovaikutuksen kohteena ollessa.
+    // Viesti, joka n‰ytet‰‰n pelaajalle 
     [SerializeField]
     public string promptMessage;
 
@@ -16,7 +16,7 @@ public abstract class Interactable : MonoBehaviour
     {
         return promptMessage;
     }
-    // Metodi, joka palauttaa vuorovaikutuksen kohteena ollessa n‰ytett‰v‰n viestin.
+    // Metodi, joka palauttaa kohteena ollessa n‰ytett‰v‰n viestin.
 
     public void BaseInteract()
     {
@@ -34,5 +34,5 @@ public abstract class Interactable : MonoBehaviour
     {
         // Ei koodia t‰ss‰, t‰m‰ on pohjaluokan funktio, joka tulee ylikirjoittaa aliluokissa.
     }
-    // Suojattu virtual-metodi vuorovaikutuksen toteuttamista varten.
+    // Suojattu virtual-metodi toteuttamista varten.
 }

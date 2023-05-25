@@ -20,13 +20,13 @@ public class PlayerLook : MonoBehaviour
         float mouseX = input.x;
         float mouseY = input.y;
 
-        // Lasketaan kameran kiertokulma ylös ja alas katsomista varten
+        // Lasketaan kameran rotation ylös ja alas katsomista varten
 
 
         xRotation -= (mouseY * Time.deltaTime) * ySensitivity;
         xRotation = Mathf.Clamp(xRotation, -80f, 80f);
 
-        // Sovitetaan tämä kiertokulma kameran paikalliseen kiertoon.
+        // Sovitetaan tämä rotation kameran rotationiin
         cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
         // kääntää pelaaja kastomaanvasemmalle ja oikealle.
         transform.Rotate(Vector3.up * (mouseX * Time.deltaTime) * xSensitivity);
