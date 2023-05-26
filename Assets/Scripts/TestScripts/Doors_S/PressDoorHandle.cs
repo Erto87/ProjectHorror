@@ -18,8 +18,10 @@ public class PressDoorHandle : MonoBehaviour
     public AudioSource lockedSound;
     public AudioSource unlockedSound;
 
-    public static bool doorisOpen; //mites näistä static? ja sit enemyn trigger scriptis tsekkaa onko open/closed
-    public static bool doorisClosed;
+    public bool doorisOpen; //mites näistä static? ja sit enemyn trigger scriptis tsekkaa onko open/closed
+    public bool doorisClosed;
+
+    
 
 
     private void Start() 
@@ -62,6 +64,29 @@ public class PressDoorHandle : MonoBehaviour
             doorisOpen = false;
         }
 
+        
+
+    }
+
+        private void OnTriggerEnter(Collider other) 
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            // pressdoorhandle = GetComponent<PressDoorHandle>();
+            if (doorisClosed && handleCollider.enabled)
+            {
+                handleCollider.enabled = false;
+                doorsEnemyTrigger.enabled = false;
+                StartCoroutine(preventAnotherOpen());
+                door.SetBool("Open", true);
+                door.SetBool("Closed", false);
+                openSound.Play();
+                // AudioManager.instance.PlaySFX("DoorOpen");
+
+                doorisOpen = true;
+                doorisClosed = false;
+            }
+        }
     }
 
 
