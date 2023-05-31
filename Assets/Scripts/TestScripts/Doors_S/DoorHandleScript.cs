@@ -30,6 +30,4 @@ public class DoorHandleScript : MonoBehaviour
             unityEvent.Invoke();
         }
     }
-
-
 }

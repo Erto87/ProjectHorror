@@ -18,10 +18,8 @@ public class PressDoorHandle : MonoBehaviour
     public AudioSource lockedSound;
     public AudioSource unlockedSound;
 
-    public bool doorisOpen; //mites näistä static? ja sit enemyn trigger scriptis tsekkaa onko open/closed
+    public bool doorisOpen; 
     public bool doorisClosed;
-
-    
 
 
     private void Start() 
@@ -31,10 +29,7 @@ public class PressDoorHandle : MonoBehaviour
         
         door.SetBool("Open", false);
         door.SetBool("Closed", true);
-        
     }
-
-
 
     public void DoorHandleMethod()
     {
@@ -64,8 +59,6 @@ public class PressDoorHandle : MonoBehaviour
             doorisOpen = false;
         }
 
-        
-
     }
 
         private void OnTriggerEnter(Collider other) 
@@ -88,8 +81,6 @@ public class PressDoorHandle : MonoBehaviour
             }
         }
     }
-
-
 
     IEnumerator preventAnotherOpen()
     {
