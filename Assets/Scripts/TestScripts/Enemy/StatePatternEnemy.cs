@@ -30,7 +30,7 @@ public class StatePatternEnemy : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     [HideInInspector]
     public SphereCollider col;
-    public MouseLook_S mouselook_s;
+    // public MouseLook_S mouselook_s;
     [SerializeField]
     private float colliderRadius;//enemyn sphere colliderin säteen pituus
 
@@ -67,7 +67,7 @@ public class StatePatternEnemy : MonoBehaviour
     {
         currentState = patrolState; //kun peli alkaa kerrotaan viholliselle että tila on patrol state.
 
-        mouselook_s = GameObject.FindWithTag("MainCamera").GetComponent<MouseLook_S>();
+        // mouselook_s = GameObject.FindWithTag("MainCamera").GetComponent<MouseLook_S>();
         playerRef = GameObject.FindGameObjectWithTag("Player");
         PatrolAreaCenters.Add(centerOfPatrolArea);
         StartCoroutine(FOVRoutine());
@@ -121,15 +121,15 @@ public class StatePatternEnemy : MonoBehaviour
     {
         currentState.UpdateState();
 
-        if (mouselook_s.flashlightOn)
-        {
+        // if (mouselook_s.flashlightOn)
+        // {
 
-            angle = 360;
-        }
-        else if (!mouselook_s.flashlightOn)
-        {
-            angle = previousAngle;
-        }
+        //     angle = 360;
+        // }
+        // else if (!mouselook_s.flashlightOn)
+        // {
+        //     angle = previousAngle;
+        // }
     }
 
     private void OnTriggerEnter(Collider other)
