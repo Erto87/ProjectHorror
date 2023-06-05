@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.07170719, g: 0.07172091, b: 0.07173479, a: 1}
+  m_IndirectSpecularColor: {r: 0.07173575, g: 0.0717503, b: 0.07176513, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1066,6 +1066,7 @@ MonoBehaviour:
         m_CallState: 2
   button: {fileID: 0}
   player: {fileID: 8551539966777198484}
+  anim: {fileID: 0}
 --- !u!65 &94232748
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8184,6 +8185,7 @@ MonoBehaviour:
         m_CallState: 2
   button: {fileID: 0}
   player: {fileID: 8551539966777198484}
+  anim: {fileID: 0}
 --- !u!65 &630772855
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10061,6 +10063,7 @@ MonoBehaviour:
   chaseTarget: {fileID: 0}
   navMeshAgent: {fileID: 847449365}
   col: {fileID: 0}
+  mouselook_s: {fileID: 0}
   colliderRadius: 6
   rangeOfPatrolling: 20
   centerOfPatrolArea: {fileID: 1753763266}
@@ -10069,6 +10072,7 @@ MonoBehaviour:
   radius: 20
   flashlightRadius: 40
   angle: 75
+  previousAngle: 0
   playerRef: {fileID: 0}
   targetMask:
     serializedVersion: 2
@@ -10320,6 +10324,7 @@ MonoBehaviour:
         m_CallState: 2
   button: {fileID: 0}
   player: {fileID: 8551539966777198484}
+  anim: {fileID: 0}
 --- !u!65 &857434010
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10448,6 +10453,7 @@ MonoBehaviour:
         m_CallState: 2
   button: {fileID: 0}
   player: {fileID: 8551539966777198484}
+  anim: {fileID: 0}
 --- !u!65 &859635721
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11427,6 +11433,7 @@ MonoBehaviour:
         m_CallState: 2
   button: {fileID: 0}
   player: {fileID: 8551539966777198484}
+  anim: {fileID: 0}
 --- !u!65 &909379793
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13665,8 +13672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4093cec6e5e64ab4e90eef4f4e590fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frameRate: 60
-  playerHealth: 0
+  targetFrameRate: 60
 --- !u!4 &1052946505
 Transform:
   m_ObjectHideFlags: 0
@@ -16225,6 +16231,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1207872469 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 691023709208839405, guid: fd2196c43814d7c4c88518678159dc48, type: 3}
+  m_PrefabInstance: {fileID: 900243527}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1216340662
 GameObject:
   m_ObjectHideFlags: 0
@@ -21171,6 +21182,7 @@ MonoBehaviour:
         m_CallState: 2
   button: {fileID: 0}
   player: {fileID: 8551539966777198484}
+  anim: {fileID: 0}
 --- !u!65 &1593570883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28607,6 +28619,7 @@ MonoBehaviour:
         m_CallState: 2
   button: {fileID: 0}
   player: {fileID: 8551539966777198484}
+  anim: {fileID: 0}
 --- !u!65 &2003499506
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31379,6 +31392,7 @@ GameObject:
   - component: {fileID: 5829774013314891243}
   - component: {fileID: 7924593048403514505}
   - component: {fileID: 7924593048403514506}
+  - component: {fileID: 7924593048403514507}
   m_Layer: 7
   m_Name: Camera
   m_TagString: MainCamera
@@ -31779,6 +31793,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseAndInventoryMenu: {fileID: 0}
   examineMode: 0
+--- !u!114 &7924593048403514507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625292952884663080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d88bf269b19205949afc5e30abb9ed1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSensitivity: 100
+  playerBody: {fileID: 1381387174705508842}
+  xRotation: 0
+  Flashlight: {fileID: 1207872469}
+  flashlightOn: 0
 --- !u!136 &8469362681429318814
 CapsuleCollider:
   m_ObjectHideFlags: 0
