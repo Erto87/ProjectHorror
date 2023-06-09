@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6671961813106481142}
   - component: {fileID: 6671961813106481140}
   - component: {fileID: 6671961813106481141}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall with door frame bathroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}

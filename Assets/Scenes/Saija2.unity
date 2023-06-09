@@ -14153,7 +14153,6 @@ MonoBehaviour:
   sfxSource: {fileID: 587174513}
   footStepsWalk: {fileID: 158262556}
   footStepsRun: {fileID: 165147184}
-  doorSounds: {fileID: 4012024611977862831, guid: d3a17498e81f0c04cbd65188e8a4aeed, type: 3}
 --- !u!4 &472612271
 Transform:
   m_ObjectHideFlags: 0
@@ -53489,7 +53488,7 @@ MonoBehaviour:
   PatrolAreaCenters: []
   radius: 20
   flashlightRadius: 40
-  angle: 80
+  angle: 100
   previousAngle: 0
   playerRef: {fileID: 0}
   targetMask:

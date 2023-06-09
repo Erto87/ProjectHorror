@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3855157729060289472}
   - component: {fileID: 3855157729060289342}
   - component: {fileID: 3855157729060289473}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pillar Bathroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}

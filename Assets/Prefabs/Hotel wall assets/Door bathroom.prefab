@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6177981007120804975}
   - component: {fileID: 6177981007120804973}
   - component: {fileID: 6177981007120804972}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door bathroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}

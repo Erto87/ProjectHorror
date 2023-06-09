@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4220898185759781848}
   - component: {fileID: 1620757236450494982}
   - component: {fileID: 6098924083141253663}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Door hallway
   m_TagString: Untagged
   m_Icon: {fileID: 0}
