@@ -19,6 +19,7 @@ public class paintingButton : MonoBehaviour
     public GameObject footprintEnemy;
 
     public Collider[] buttonColliders;
+    public AudioSource Oopsie;
 
 
 
@@ -231,6 +232,8 @@ public class paintingButton : MonoBehaviour
 
         Debug.Log("you in trouble now..");
         footprintEnemy.SetActive(true);
+
+        Oopsie.Play();
         
     }
 }
