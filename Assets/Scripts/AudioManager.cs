@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;// Static variable to hold an instance of the AudioManager
 
     public Sound[] musicSounds, sfxSounds;// Arrays to store music and sound effects
-    public AudioSource musicSource, sfxSource, footStepsWalk, footStepsRun, doorSounds;// Audio sources for music and sound effects
+    public AudioSource musicSource, sfxSource, footStepsWalk, footStepsRun;// Audio sources for music and sound effects
 
     private void Awake()
     {
@@ -58,7 +58,6 @@ public class AudioManager : MonoBehaviour
         sfxSource.mute= !sfxSource.mute; // Toggle the mute state of the sfxSource
         footStepsWalk.mute= !footStepsWalk.mute;
         footStepsRun.mute= !footStepsRun.mute;
-        doorSounds.mute= !doorSounds.mute;
     }
     public void MusicVolume(float volume)
     {
@@ -69,7 +68,6 @@ public class AudioManager : MonoBehaviour
         sfxSource.volume = volume;// Set the volume of the sfxSource
         footStepsWalk.volume = volume;
         footStepsRun.volume = volume;
-        doorSounds.volume = volume;
     }
 
 
