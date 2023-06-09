@@ -47150,6 +47150,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LockedDoorSilver
       objectReference: {fileID: 0}
+    - target: {fileID: 4810788414066424958, guid: 13ca87cc5f423fa4c91829d4a8a88020, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 158262554}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 13ca87cc5f423fa4c91829d4a8a88020, type: 3}
@@ -62783,6 +62787,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LockedDoorBronze
       objectReference: {fileID: 0}
+    - target: {fileID: 4810788414066424958, guid: ee5f59ec2643b5342bd7a57801cb8027, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 158262554}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: ee5f59ec2643b5342bd7a57801cb8027, type: 3}
