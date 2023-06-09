@@ -54,6 +54,8 @@ public class TrackingState : IEnemyState
 
     void Track()
     {
+        enemy.anim.SetBool("Walk", true);
+        enemy.anim.SetBool("Idle", false);
         enemy.indicator.material.color = Color.magenta;
         // enemy.navMeshAgent.destination = enemy.waypoints[nextWaypoint].position;
         enemy.navMeshAgent.destination = enemy.lastKnownPlayerPosition;

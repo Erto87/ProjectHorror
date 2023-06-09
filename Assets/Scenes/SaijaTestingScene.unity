@@ -1710,7 +1710,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &393730967
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3664,7 +3664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1119382179
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6902,6 +6902,9 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 57bef60382d42eb468a96c20dce8059e, type: 3}
   musicSource: {fileID: 251243891}
   sfxSource: {fileID: 1686653058}
+  footStepsWalk: {fileID: 0}
+  footStepsRun: {fileID: 0}
+  doorSounds: {fileID: 0}
 --- !u!4 &1833658197
 Transform:
   m_ObjectHideFlags: 0

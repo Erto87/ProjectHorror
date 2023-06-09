@@ -49,6 +49,7 @@ public class StatePatternEnemy : MonoBehaviour
 
     public LayerMask targetMask;
     public LayerMask obstructionMask;
+    public Animator anim;
 
     public bool canSeePlayer;
 
@@ -65,6 +66,7 @@ public class StatePatternEnemy : MonoBehaviour
 
     void Start()
     {
+        anim = gameObject.GetComponentInChildren<Animator>();
         currentState = patrolState; //kun peli alkaa kerrotaan viholliselle että tila on patrol state.
 
         // mouselook_s = GameObject.FindWithTag("MainCamera").GetComponent<MouseLook_S>();

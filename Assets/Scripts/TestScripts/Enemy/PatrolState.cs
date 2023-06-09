@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -62,6 +63,8 @@ public class PatrolState : IEnemyState
 
     void Patrol()
     {
+        enemy.anim.SetBool("Walk", true);
+        enemy.anim.SetBool("Idle", false);
         enemy.navMeshAgent.isStopped = false;
         enemy.navMeshAgent.speed = 3.5f;
 

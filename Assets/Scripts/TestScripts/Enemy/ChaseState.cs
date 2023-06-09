@@ -51,6 +51,8 @@ public class ChaseState : IEnemyState
         enemy.indicator.material.color = Color.red;
         enemy.navMeshAgent.destination = enemy.chaseTarget.position;
         enemy.navMeshAgent.isStopped = false;
+        enemy.anim.SetBool("Walk", true);
+        enemy.anim.SetBool("Idle", false);
     }
 
     void Look()
