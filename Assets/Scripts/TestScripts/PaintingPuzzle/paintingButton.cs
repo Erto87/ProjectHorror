@@ -16,6 +16,8 @@ public class paintingButton : MonoBehaviour
     public List<Sprite> scream;
     private SpriteRenderer rend;
 
+    public GameObject footprintEnemy;
+
 
 
     private void Start() 
@@ -221,5 +223,7 @@ public class paintingButton : MonoBehaviour
         }
 
         Debug.Log("you in trouble now..");
+        footprintEnemy.SetActive(true);
+        
     }
 }
