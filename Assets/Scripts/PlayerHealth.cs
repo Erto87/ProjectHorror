@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -43,40 +44,40 @@ public class PlayerHealth : MonoBehaviour
     public void UpdateHealthUI()
     {
        // Debug.Log(health); // Tulostaa pelaajan nykyisen healthin konsoliin
-        float fillF = frontHealthBar.fillAmount; // Otetaan muuttujaan täytetyn etupalkin täyttöaste
-        float fillB = backHealthBar.fillAmount; // Otetaan muuttujaan täytetyn taustapalkin täyttöaste
+        float fillF = frontHealthBar.fillAmount; // Otetaan muuttujaan tï¿½ytetyn etupalkin tï¿½yttï¿½aste
+        float fillB = backHealthBar.fillAmount; // Otetaan muuttujaan tï¿½ytetyn taustapalkin tï¿½yttï¿½aste
         float hFraction = health / maxHealth; // Lasketaan pelaajan healthin suhde maksimi healthiin.
-        if (fillB > hFraction) // Jos taustapalkin täyttöaste on suurempi kuin pelaajan healthin suhde makshealthiin.
+        if (fillB > hFraction) // Jos taustapalkin tï¿½yttï¿½aste on suurempi kuin pelaajan healthin suhde makshealthiin.
         {
-            frontHealthBar.fillAmount = hFraction; // Päivitetään vastaamaan pelaajan healthin suhdetta makshealthiin
-            backHealthBar.color = Color.red; // Asetetaan taustan väri punaiseksi
-            lerpTimer += Time.deltaTime; // Ajanotto käynnistyy
+            frontHealthBar.fillAmount = hFraction; // Pï¿½ivitetï¿½ï¿½n vastaamaan pelaajan healthin suhdetta makshealthiin
+            backHealthBar.color = Color.red; // Asetetaan taustan vï¿½ri punaiseksi
+            lerpTimer += Time.deltaTime; // Ajanotto kï¿½ynnistyy
             float percentComplete = lerpTimer / chipSpeed; // Lasketaan kulunut aika suhteessa chipSpeed-muuttujaan
-            backHealthBar.fillAmount = Mathf.Lerp(fillB, hFraction, percentComplete); // Lerpataan taustapalkin täyttöastetta hFraction-muuttujan suuntaan prosenttimäärän mukaan
+            backHealthBar.fillAmount = Mathf.Lerp(fillB, hFraction, percentComplete); // Lerpataan taustapalkin tï¿½yttï¿½astetta hFraction-muuttujan suuntaan prosenttimï¿½ï¿½rï¿½n mukaan
         }
-        if (fillF < hFraction) // Jos etupalkin täyttöaste on pienempi kuin pelaajan health suhde makshealthiin
+        if (fillF < hFraction) // Jos etupalkin tï¿½yttï¿½aste on pienempi kuin pelaajan health suhde makshealthiin
         {
-            backHealthBar.fillAmount = hFraction; // Asetetaan taustapalkin täyttöaste pelaajan healthin suhteeksi makshealthiin
-            backHealthBar.color = Color.green; // Asetetaan taustan väri vihreäksi
-            lerpTimer += Time.deltaTime; // Ajanotto käynnistyy
+            backHealthBar.fillAmount = hFraction; // Asetetaan taustapalkin tï¿½yttï¿½aste pelaajan healthin suhteeksi makshealthiin
+            backHealthBar.color = Color.green; // Asetetaan taustan vï¿½ri vihreï¿½ksi
+            lerpTimer += Time.deltaTime; // Ajanotto kï¿½ynnistyy
             float percentComplete = lerpTimer / chipSpeed; // Lasketaan kulunut aika suhteessa chipSpeed-muuttujaan
-            frontHealthBar.fillAmount = Mathf.Lerp(fillF, backHealthBar.fillAmount, percentComplete); // Lerpataan etupalkin täyttöastetta taustapalkin täyttöasteen suuntaan prosenttimäärän mukaan
+            frontHealthBar.fillAmount = Mathf.Lerp(fillF, backHealthBar.fillAmount, percentComplete); // Lerpataan etupalkin tï¿½yttï¿½astetta taustapalkin tï¿½yttï¿½asteen suuntaan prosenttimï¿½ï¿½rï¿½n mukaan
         }
     }
-    public void TakeDamage(float damage) //metodi vähentää pelaajan terveyttä vahingon verran
+    public void TakeDamage(float damage) //metodi vï¿½hentï¿½ï¿½ pelaajan terveyttï¿½ vahingon verran
     {
-        health -= damage; //vähennetään pelaajan terveyttä
+        health -= damage; //vï¿½hennetï¿½ï¿½n pelaajan terveyttï¿½
         lerpTimer = 0f; //asetetaan lerpTimer nollaan
         Debug.Log("Damage otettu"); //tulostetaan "Damage otettu"
         durationTimer = 0; //asetetaan durationTimer nollaan
-        overlay.color = new Color(overlay.color.r, overlay.color.g, overlay.color.b, 1); //asetetaan overlayn väri täydeksi punaiseksi
+        overlay.color = new Color(overlay.color.r, overlay.color.g, overlay.color.b, 1); //asetetaan overlayn vï¿½ri tï¿½ydeksi punaiseksi
     }
 
-    public void RestoreHealth(float healAmount) //metodi palauttaa pelaajan terveyttä annetun määrän
+    public void RestoreHealth(float healAmount) //metodi palauttaa pelaajan terveyttï¿½ annetun mï¿½ï¿½rï¿½n
     {
-        health += healAmount; //lisätään pelaajan terveyttä
+        health += healAmount; //lisï¿½tï¿½ï¿½n pelaajan terveyttï¿½
         lerpTimer = 0f; //asetetaan lerpTimer nollaan
-        Debug.Log("Healthia saatu"); //tulostetaan "Healthia saatu"¨
+        Debug.Log("Healthia saatu"); //tulostetaan "Healthia saatu"ï¿½
         durationTimer = 0; //asetetaan durationTimer nollaan
         healtgain = true;
         greenhealth.color = new Color(greenhealth.color.r, greenhealth.color.g, greenhealth.color.b, 1);
@@ -92,45 +93,53 @@ public class PlayerHealth : MonoBehaviour
 
     public void DeadMan() //metodi tarkistaa, onko pelaaja kuollut
     {
-        if (health <= 0) //jos pelaajan health on pienempi tai yhtäsuuri kuin nolla
+        if (health <= 0) //jos pelaajan health on pienempi tai yhtï¿½suuri kuin nolla
         {
-            playerDead = true; //merkitään pelaaja kuolleeksi
+            playerDead = true; //merkitï¿½ï¿½n pelaaja kuolleeksi
         }
     }
     public void HealthScreens()
     {
-        // Tarkistaa onko greenhealth-värin läpinäkyvyysarvo suurempi kuin 0
+        // Tarkistaa onko greenhealth-vï¿½rin lï¿½pinï¿½kyvyysarvo suurempi kuin 0
         if (greenhealth.color.a > 0)
         {
             Debug.Log("healtgained");
 
-            // Lisää keston ajastinta Time.deltaTimen avulla
+            // Lisï¿½ï¿½ keston ajastinta Time.deltaTimen avulla
             durationTimer += Time.deltaTime;
             if (durationTimer > duration)
             {
-                // Vähennä vihreän terveyspalkin läpinäkyvyyttä ajan kuluessa
+                // Vï¿½hennï¿½ vihreï¿½n terveyspalkin lï¿½pinï¿½kyvyyttï¿½ ajan kuluessa
                 float tempAlpha = greenhealth.color.a;
                 tempAlpha -= Time.deltaTime * fadeSpeed;
                 greenhealth.color = new Color(greenhealth.color.r, greenhealth.color.g, greenhealth.color.b, tempAlpha);
             }
         }
 
-        // Tarkista, onko overlay-värin läpinäkyvyysarvo suurempi kuin 0
+        // Tarkista, onko overlay-vï¿½rin lï¿½pinï¿½kyvyysarvo suurempi kuin 0
         if (overlay.color.a > 0)
         {
             // Tarkista, onko health alle 30
             if (health < 30)
                 return;
 
-            // Lisää keston ajastinta Time.deltaTimen avulla
+            // Lisï¿½ï¿½ keston ajastinta Time.deltaTimen avulla
             durationTimer += Time.deltaTime;
             if (durationTimer > duration)
             {
-                // Vähennä päällekkäisyyden (overlay) läpinäkyvyyttä ajan kuluessa
+                // Vï¿½hennï¿½ pï¿½ï¿½llekkï¿½isyyden (overlay) lï¿½pinï¿½kyvyyttï¿½ ajan kuluessa
                 float tempAlpha = overlay.color.a;
                 tempAlpha -= Time.deltaTime * fadeSpeed;
                 overlay.color = new Color(overlay.color.r, overlay.color.g, overlay.color.b, tempAlpha);
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other) 
+    {
+        if (other.gameObject.CompareTag("FootprintEnemy"))
+        {
+            health = 0f;
         }
     }
 

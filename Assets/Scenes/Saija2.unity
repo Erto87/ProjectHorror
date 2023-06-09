@@ -65404,7 +65404,7 @@ GameObject:
   - component: {fileID: 1853784401}
   m_Layer: 0
   m_Name: footprintEnemy
-  m_TagString: Untagged
+  m_TagString: FootprintEnemy
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
