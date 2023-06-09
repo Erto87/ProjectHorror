@@ -13,6 +13,7 @@ public class LockedDoors : MonoBehaviour
     public Animator door;
     public Collider handleCollider;
     public Collider doorsEnemyTrigger;
+    public Collider doorCollider;
 
 
     public AudioSource openSound;
@@ -37,8 +38,9 @@ public class LockedDoors : MonoBehaviour
 
     public void DoorHandleMethod()
     {
-        if (doorisClosed && testKeyToDoorSystem.canBeOpened == true)
+        if (doorisClosed && testKeyToDoorSystem.canBeOpened == true && doorCollider.enabled)
         {
+            doorCollider.enabled = false;
             handleCollider.enabled = false;
             doorsEnemyTrigger.enabled = false;
             StartCoroutine(preventAnotherOpen());
@@ -52,6 +54,7 @@ public class LockedDoors : MonoBehaviour
         }
         else if (doorisOpen)
         {
+            doorCollider.enabled = false;
             handleCollider.enabled = false;
             StartCoroutine(preventAnotherOpen());
             door.SetBool("Open", false);
@@ -90,6 +93,7 @@ public class LockedDoors : MonoBehaviour
     {
         yield return new WaitForSeconds(1.05f);
         {
+            doorCollider.enabled = true;
             handleCollider.enabled = true;
             doorsEnemyTrigger.enabled = true;
 

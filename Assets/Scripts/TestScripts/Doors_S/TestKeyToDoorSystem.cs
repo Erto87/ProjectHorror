@@ -7,14 +7,14 @@ public class TestKeyToDoorSystem : Interactable
     public bool locked;
     public bool canBeOpened;
 
-    public PressDoorHandle pressDoorHandler;
+    public LockedDoors lockedDoors;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        pressDoorHandler= GetComponent<PressDoorHandle>();
+        lockedDoors= GetComponent<LockedDoors>();
     }
 
     // Update is called once per frame
@@ -62,7 +62,7 @@ public class TestKeyToDoorSystem : Interactable
 
         if (canBeOpened)
         {
-            pressDoorHandler.DoorHandleMethod();
+            lockedDoors.DoorHandleMethod();
         }
     }
 }
