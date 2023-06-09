@@ -63,10 +63,11 @@ public class PatrolState : IEnemyState
 
     void Patrol()
     {
+        enemy.anim.SetBool("LookAround", false);
         enemy.anim.SetBool("Walk", true);
         enemy.anim.SetBool("Idle", false);
         enemy.navMeshAgent.isStopped = false;
-        enemy.navMeshAgent.speed = 3.5f;
+        enemy.navMeshAgent.speed = 4f;
 
         if(enemy.navMeshAgent.remainingDistance <= enemy.navMeshAgent.stoppingDistance) //enemy on saavuttanut kohteen mihin oli patrollaamassa
         {

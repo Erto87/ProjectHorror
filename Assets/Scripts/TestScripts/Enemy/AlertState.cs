@@ -49,7 +49,8 @@ public class AlertState : IEnemyState
     void Search()
     {
         enemy.anim.SetBool("Walk", false);
-        enemy.anim.SetBool("Idle", true);
+        enemy.anim.SetBool("LookAround", true);
+        enemy.anim.SetBool("Idle", false);
         enemy.indicator.material.color = Color.yellow;
         enemy.navMeshAgent.isStopped = true;
         enemy.transform.Rotate(enemy.searchTurnSpeed * new Vector3(0, 1, 0) * Time.deltaTime);

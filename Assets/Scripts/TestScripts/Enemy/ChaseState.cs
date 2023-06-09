@@ -47,12 +47,13 @@ public class ChaseState : IEnemyState
 
     void Chase()
     {
-        enemy.navMeshAgent.speed = 4.5f;
+        enemy.navMeshAgent.speed = 5f;
         enemy.indicator.material.color = Color.red;
         enemy.navMeshAgent.destination = enemy.chaseTarget.position;
         enemy.navMeshAgent.isStopped = false;
         enemy.anim.SetBool("Walk", true);
         enemy.anim.SetBool("Idle", false);
+        enemy.anim.SetBool("LookAround", false);
     }
 
     void Look()
@@ -70,6 +71,7 @@ public class ChaseState : IEnemyState
             //jos säde osuu pelaajaan, vihu tunnistaa kohteen ja lähtee jahtaamaan
             Debug.Log("pelaaja on näkyvissä");
             enemy.chaseTarget = hit.transform;
+            enemy.lastKnownPlayerPosition = enemy.chaseTarget.position;
         }
         else
         {
