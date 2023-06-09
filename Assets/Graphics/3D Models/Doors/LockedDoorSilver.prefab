@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   useEvents: 1
-  promptMessage: Silver Key required
+  promptMessage: Press E to Use Silver Key
   locked: 1
   canBeOpened: 0
   lockedDoors: {fileID: 0}
