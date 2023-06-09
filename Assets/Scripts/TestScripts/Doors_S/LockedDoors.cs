@@ -68,26 +68,26 @@ public class LockedDoors : MonoBehaviour
 
     }
 
-        private void OnTriggerEnter(Collider other) 
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            // pressdoorhandle = GetComponent<PressDoorHandle>();
-            if (doorisClosed && handleCollider.enabled)
-            {
-                handleCollider.enabled = false;
-                doorsEnemyTrigger.enabled = false;
-                StartCoroutine(preventAnotherOpen());
-                door.SetBool("Open", true);
-                door.SetBool("Closed", false);
-                openSound.Play();
-                // AudioManager.instance.PlaySFX("DoorOpen");
+    //     private void OnTriggerEnter(Collider other) 
+    // {
+    //     if (other.gameObject.CompareTag("Enemy"))
+    //     {
+    //         // pressdoorhandle = GetComponent<PressDoorHandle>();
+    //         if (doorisClosed && handleCollider.enabled)
+    //         {
+    //             handleCollider.enabled = false;
+    //             doorsEnemyTrigger.enabled = false;
+    //             StartCoroutine(preventAnotherOpen());
+    //             door.SetBool("Open", true);
+    //             door.SetBool("Closed", false);
+    //             openSound.Play();
+    //             // AudioManager.instance.PlaySFX("DoorOpen");
 
-                doorisOpen = true;
-                doorisClosed = false;
-            }
-        }
-    }
+    //             doorisOpen = true;
+    //             doorisClosed = false;
+    //         }
+    //     }
+    // }
 
     IEnumerator preventAnotherOpen()
     {
