@@ -11,6 +11,7 @@ public class PressButton : MonoBehaviour
     public GameObject button;
     public GameObject player;
     public Animator anim;
+    public AudioSource buttonSound;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class PressButton : MonoBehaviour
             anim = GetComponent<Animator>();
             anim.SetTrigger("pressed");
             unityEvent.Invoke();
+            buttonSound.Play();
 
             
         }
