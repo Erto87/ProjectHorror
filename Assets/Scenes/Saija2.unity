@@ -7939,6 +7939,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 56eeda70e569deb4584ee762c333733a, type: 3}
   - {fileID: 21300000, guid: c33761669d0049d458fb4a59daf83de8, type: 3}
   footprintEnemy: {fileID: 1853784396}
+  buttonColliders:
+  - {fileID: 1343517695}
+  - {fileID: 2049770044}
+  - {fileID: 2087382873}
+  - {fileID: 16320820}
+  - {fileID: 1426895648}
+  - {fileID: 481648883}
 --- !u!4 &272578468
 Transform:
   m_ObjectHideFlags: 0

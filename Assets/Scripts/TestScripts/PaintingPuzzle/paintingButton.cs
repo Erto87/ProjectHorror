@@ -18,6 +18,8 @@ public class paintingButton : MonoBehaviour
 
     public GameObject footprintEnemy;
 
+    public Collider[] buttonColliders;
+
 
 
     private void Start() 
@@ -220,6 +222,11 @@ public class paintingButton : MonoBehaviour
         {
             rend = paintings[i].GetComponent<SpriteRenderer>();
             rend.sprite = scream[i];
+        }
+
+        for (int i = 0; i < buttonColliders.Length; i++)
+        {
+            buttonColliders[i].enabled = false;
         }
 
         Debug.Log("you in trouble now..");
