@@ -171,4 +171,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemButton: {fileID: 3008385022134450913, guid: 01dad7910692dfa41ba164e7b0e09c6a, type: 3}
-  InteractableObject: 
+  InteractableObject: LockedDoorSilver
