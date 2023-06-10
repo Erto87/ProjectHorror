@@ -22,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
     public Animator animator;
     public Image greenhealth;
     public bool healtgain;
+    public AudioSource neckSnap;
     
     void Start()
     {
@@ -140,6 +141,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.gameObject.CompareTag("FootprintEnemy"))
         {
+            neckSnap.Play();
             TakeDamage(100f);
         }
     }
