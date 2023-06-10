@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class PlayerMovement : MonoBehaviour
 {
     private CharacterController controller;
+    private PlayerLook playerLook;
     private Vector3 playerVelocity;
     public float speed = 5f;
     public bool isGrounded;
@@ -19,9 +20,12 @@ public class PlayerMovement : MonoBehaviour
     public float sprintTimer;
     public Animator animator;
     public PlayerHealth playerHealth;
+
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        playerLook = GetComponent<PlayerLook>();
 
     }
 
@@ -56,6 +60,9 @@ public class PlayerMovement : MonoBehaviour
         {
             // Debug.Log("NYT KUOLTIIN");
             animator.SetBool("isDead", true);
+            controller.enabled = false;
+            playerLook.xSensitivity = 0f;
+            playerLook.ySensitivity = 0f;
             
         }
 
