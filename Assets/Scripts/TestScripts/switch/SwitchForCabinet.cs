@@ -7,7 +7,10 @@ public class SwitchForCabinet : MonoBehaviour
 {
     public GameObject player;
     public GameObject cabinet;
+    public AudioSource flip;
     private float distanceToButton;
+
+    public bool flipped = false;
 
     private void Start() 
     {
@@ -30,10 +33,15 @@ public class SwitchForCabinet : MonoBehaviour
             hit.collider.gameObject.GetComponentInChildren<Animator>().enabled = true;
             cabinet.GetComponent<Animator>().enabled = true;
 
+            if(!flipped)
+            {
+                flip.Play();
+                flipped = true;
+            }
+
+
 
         }
-
-
         
     }
 }
