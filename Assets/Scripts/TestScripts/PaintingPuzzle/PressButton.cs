@@ -12,6 +12,7 @@ public class PressButton : MonoBehaviour
     public GameObject player;
     public Animator anim;
     public AudioSource buttonSound;
+    
 
     void Start()
     {

@@ -20,6 +20,8 @@ public class paintingButton : MonoBehaviour
 
     public Collider[] buttonColliders;
     public AudioSource Oopsie;
+    public Animator silverDoorAnim;
+
 
 
 
@@ -232,6 +234,10 @@ public class paintingButton : MonoBehaviour
 
         Debug.Log("you in trouble now..");
         footprintEnemy.SetActive(true);
+        silverDoorAnim = GameObject.FindGameObjectWithTag("SilverDoor").GetComponent<Animator>();
+        silverDoorAnim.SetBool("Closed", true);
+        silverDoorAnim.SetBool("Open", false);
+        Debug.Log("Only once?");
 
         Oopsie.Play();
         

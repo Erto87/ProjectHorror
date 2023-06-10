@@ -24,6 +24,8 @@ public class LockedDoors : MonoBehaviour
     public bool doorisOpen; 
     public bool doorisClosed;
 
+    public GameObject footprintEnemy;
+
 
     private void Start() 
     {
@@ -38,7 +40,7 @@ public class LockedDoors : MonoBehaviour
 
     public void DoorHandleMethod()
     {
-        if (doorisClosed && testKeyToDoorSystem.canBeOpened == true && doorCollider.enabled)
+        if (doorisClosed && testKeyToDoorSystem.canBeOpened == true && doorCollider.enabled && footprintEnemy.activeInHierarchy == false)
         {
             doorCollider.enabled = false;
             handleCollider.enabled = false;

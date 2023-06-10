@@ -4614,7 +4614,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158262554}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -174.5, y: -1.05, z: 52.1}
+  m_LocalPosition: {x: -173.7, y: -1, z: 49.7}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8227,6 +8227,7 @@ MonoBehaviour:
   - {fileID: 1426895648}
   - {fileID: 481648883}
   Oopsie: {fileID: 272578469}
+  silverDoorAnim: {fileID: 0}
 --- !u!4 &272578468
 Transform:
   m_ObjectHideFlags: 0
@@ -47686,6 +47687,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 815733193}
     m_Modifications:
+    - target: {fileID: 1328008696505759580, guid: 13ca87cc5f423fa4c91829d4a8a88020, type: 3}
+      propertyPath: footprintEnemy
+      value: 
+      objectReference: {fileID: 1853784396}
     - target: {fileID: 4810788413960748225, guid: 13ca87cc5f423fa4c91829d4a8a88020, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -47733,6 +47738,14 @@ PrefabInstance:
     - target: {fileID: 4810788413960748226, guid: 13ca87cc5f423fa4c91829d4a8a88020, type: 3}
       propertyPath: m_Name
       value: LockedDoorSilver
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810788413960748226, guid: 13ca87cc5f423fa4c91829d4a8a88020, type: 3}
+      propertyPath: m_TagString
+      value: SilverDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810788413960748254, guid: 13ca87cc5f423fa4c91829d4a8a88020, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4810788414066424958, guid: 13ca87cc5f423fa4c91829d4a8a88020, type: 3}
       propertyPath: player
@@ -63501,6 +63514,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 816037453}
     m_Modifications:
+    - target: {fileID: 1328008696505759580, guid: ee5f59ec2643b5342bd7a57801cb8027, type: 3}
+      propertyPath: footprintEnemy
+      value: 
+      objectReference: {fileID: 1853784396}
     - target: {fileID: 4810788413960748225, guid: ee5f59ec2643b5342bd7a57801cb8027, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -63602,15 +63619,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7997257665197500959, guid: 8c22ce5be7c51c641bf6c79fa2ffe2de, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -99.784164
+      value: -177.8
       objectReference: {fileID: 0}
     - target: {fileID: 7997257665197500959, guid: 8c22ce5be7c51c641bf6c79fa2ffe2de, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.466
+      value: -2.45
       objectReference: {fileID: 0}
     - target: {fileID: 7997257665197500959, guid: 8c22ce5be7c51c641bf6c79fa2ffe2de, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.6519089
+      value: 56.097004
       objectReference: {fileID: 0}
     - target: {fileID: 7997257665197500959, guid: 8c22ce5be7c51c641bf6c79fa2ffe2de, type: 3}
       propertyPath: m_LocalRotation.w
@@ -77714,6 +77731,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 864648564}
     m_Modifications:
+    - target: {fileID: 1328008696505759580, guid: 0f2ae7188c0cf204c86fa42c05e2b671, type: 3}
+      propertyPath: footprintEnemy
+      value: 
+      objectReference: {fileID: 1853784396}
     - target: {fileID: 4810788413960748225, guid: 0f2ae7188c0cf204c86fa42c05e2b671, type: 3}
       propertyPath: m_RootOrder
       value: -1
