@@ -18,7 +18,16 @@ public class AlertState : IEnemyState
     public void OnTriggerEnter(Collider other)
     {
         
+    }
 
+    public void OnCollisionEnter(Collision other) 
+    {
+        
+    }
+
+    public void ToAttackState()
+    {
+        
     }
 
 

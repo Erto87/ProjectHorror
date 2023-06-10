@@ -2,77 +2,79 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChaseState : IEnemyState
+public class AttackState : IEnemyState
 {
 
     StatePatternEnemy enemy;
 
+    private float attackTimer;
 
-    public ChaseState(StatePatternEnemy statePatternEnemy)//kun statepatternenemyn new patrolstate(); rivi ajetaan ni tää ajetaan
+    public AttackState(StatePatternEnemy statePatternEnemy)//kun statepatternenemyn new patrolstate(); rivi ajetaan ni tää ajetaan
     {
         enemy = statePatternEnemy; //enemy muuttuja on koko StatePatternEnemy -luokka. Näin päästään käsiksi StatePatternEnemyn muuttujiin ja funktioihin.
     }
-
-    public void OnTriggerEnter(Collider other)
-    {
-        
-
-    }
-
-    public void OnCollisionEnter(Collision other) 
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            ToAttackState();
-        }
-    }
-
-    public void ToAttackState()
-    {
-        enemy.enemysCollider.enabled = false;
-        enemy.playerHealth.TakeDamage(35f);
-        enemy.currentState = enemy.attackState;
-    }
-
-
-    public void ToAlertState()
-    {
-        enemy.currentState = enemy.alertState;
-    }
-
-    public void ToChaseState()
-    {
-
-    }
-
+    // Start is called before the first frame update
     public void ToPatrolState()
     {
 
     }
 
+    public void ToAttackState()
+    {
+        
+    }
+
     public void ToTrackingState()
     {
         enemy.currentState = enemy.trackingState;
+         attackTimer = 0f;
+    }
+
+    public void ToAlertState()
+    {
+        enemy.currentState = enemy.alertState;
+         attackTimer = 0f;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+
+    }
+
+    public void OnCollisionEnter(Collision other) 
+    {
+        
+    }
+
+
+    public void ToChaseState()
+    {
+        attackTimer = 0f;
+        enemy.currentState = enemy.chaseState;
     }
 
     public void UpdateState()
     {
-        Chase();
+        Attack();
         Look();
     }
 
-    void Chase()
+    private void Attack()
     {
-        enemy.navMeshAgent.speed = 5f;
-        enemy.indicator.material.color = Color.red;
-        enemy.navMeshAgent.destination = enemy.chaseTarget.position;
-        enemy.navMeshAgent.isStopped = false;
-        enemy.anim.SetBool("Walk", true);
-        enemy.anim.SetBool("Idle", false);
-        enemy.anim.SetBool("LookAround", false);
+        attackTimer += Time.deltaTime;
+
+        Debug.Log("attacking");
+        enemy.navMeshAgent.speed = 0f;
+
+        if (attackTimer > 1f)
+        {
+            enemy.enemysCollider.enabled = true;
+            ToChaseState();
+        }
+
     }
 
-    void Look()
+    private void Look()
     {
         Vector3 enemyToTarget = enemy.chaseTarget.position - enemy.eye.position;//suunta silmästä pelaajaan
 
@@ -93,6 +95,18 @@ public class ChaseState : IEnemyState
         {
             Debug.Log("Pelaaja hävisi");
             ToTrackingState();
+        }
+
+    }
+
+    IEnumerator PreventAnotherAttack()
+    {
+        yield return new WaitForSeconds(1.05f);
+        {
+            Debug.Log("COROUTINE STARTED");
+            enemy.navMeshAgent.speed = 5f;
+            enemy.enemysCollider.enabled = true;
+
         }
     }
 }

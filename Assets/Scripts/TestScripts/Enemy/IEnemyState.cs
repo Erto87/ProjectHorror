@@ -11,4 +11,7 @@ public interface IEnemyState
     void ToAlertState();
     void ToChaseState();
     void ToTrackingState();
+    void ToAttackState();
+
+    void OnCollisionEnter(Collision other);
 }

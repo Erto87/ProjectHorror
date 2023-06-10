@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,6 +14,9 @@ public class StatePatternEnemy : MonoBehaviour
     public MeshRenderer indicator; //pallo vihollisen päällä
     public Vector3 lastKnownPlayerPosition;//piste jossa pelaaja on kun katoaa nurkan taa
 
+    public PlayerHealth playerHealth;
+    public Collider enemysCollider;
+
     public Transform chaseTarget;
 
     [HideInInspector]
@@ -25,6 +29,8 @@ public class StatePatternEnemy : MonoBehaviour
     public ChaseState chaseState;
     [HideInInspector]
     public TrackingState trackingState;
+    [HideInInspector]
+    public AttackState attackState;
 
 
     public NavMeshAgent navMeshAgent;
@@ -61,11 +67,14 @@ public class StatePatternEnemy : MonoBehaviour
         alertState = new AlertState(this);
         chaseState = new ChaseState(this);//muuttujat jotka saatavilla muista luokista pitää olla public
         trackingState = new TrackingState(this);
+        attackState = new AttackState(this);
 
     }
 
     void Start()
     {
+        enemysCollider = this.gameObject.GetComponent<BoxCollider>();
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         anim = gameObject.GetComponentInChildren<Animator>();
         currentState = patrolState; //kun peli alkaa kerrotaan viholliselle että tila on patrol state.
 
@@ -138,4 +147,13 @@ public class StatePatternEnemy : MonoBehaviour
     {
         currentState.OnTriggerEnter(other);
     }
+
+    private void OnCollisionEnter(Collision other) 
+    {
+        currentState.OnCollisionEnter(other);
+    }
+
+    
+
+
 }

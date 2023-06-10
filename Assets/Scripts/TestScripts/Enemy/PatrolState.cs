@@ -27,6 +27,10 @@ public class PatrolState : IEnemyState
         Debug.Log("jahdataan");
         enemy.currentState = enemy.chaseState;
     }
+    public void ToAttackState()
+    {
+
+    }
 
     public void ToPatrolState()
     {
@@ -54,6 +58,11 @@ public class PatrolState : IEnemyState
                 ToAlertState();
             // }
         }
+    }
+
+    public void OnCollisionEnter(Collision other) 
+    {
+        
     }
 
         public void ToAlertState()

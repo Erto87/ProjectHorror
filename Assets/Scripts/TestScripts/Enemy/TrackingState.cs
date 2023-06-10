@@ -37,14 +37,24 @@ public class TrackingState : IEnemyState
 
     }
 
+    public void ToAttackState()
+    {
+        
+    }
+
+    public void OnCollisionEnter(Collision other) 
+    {
+        
+    }
+
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            Debug.Log("Pelaaja on alueella");
-            ToAlertState();
-        }
+        // if (other.CompareTag("Player"))
+        // {
+        //     Debug.Log("Pelaaja on alueella");
+        //     ToAlertState();
+        // }
     }
 
         public void ToAlertState()
