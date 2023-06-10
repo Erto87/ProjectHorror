@@ -69642,7 +69642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4012024611977862834, guid: d3a17498e81f0c04cbd65188e8a4aeed, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4012024612083670542, guid: d3a17498e81f0c04cbd65188e8a4aeed, type: 3}
       propertyPath: player
