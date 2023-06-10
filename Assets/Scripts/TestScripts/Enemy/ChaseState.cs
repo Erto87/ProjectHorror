@@ -23,13 +23,18 @@ public class ChaseState : IEnemyState
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            // enemy.enemysCollider.enabled = false;
+            enemy.enemysCollider.enabled = false;
+            enemy.navMeshAgent.speed = 0f;
+            Debug.Log("TO ATTACK STATE");
             ToAttackState();
         }
     }
 
     public void ToAttackState()
     {
-        enemy.enemysCollider.enabled = false;
+        enemy.attackTimer = 0f;
+        enemy.navMeshAgent.speed = 0f;
         enemy.playerHealth.TakeDamage(35f);
         enemy.currentState = enemy.attackState;
     }
@@ -85,13 +90,13 @@ public class ChaseState : IEnemyState
         {
             //toteutuu jos säde osuu pelaajaan
             //jos säde osuu pelaajaan, vihu tunnistaa kohteen ja lähtee jahtaamaan
-            Debug.Log("pelaaja on näkyvissä");
+            // Debug.Log("pelaaja on näkyvissä");
             enemy.chaseTarget = hit.transform;
             enemy.lastKnownPlayerPosition = enemy.chaseTarget.position;
         }
         else
         {
-            Debug.Log("Pelaaja hävisi");
+            // Debug.Log("Pelaaja hävisi");
             ToTrackingState();
         }
     }

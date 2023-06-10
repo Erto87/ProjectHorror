@@ -68,7 +68,7 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= damage; //v�hennet��n pelaajan terveytt�
         lerpTimer = 0f; //asetetaan lerpTimer nollaan
-        Debug.Log("Damage otettu"); //tulostetaan "Damage otettu"
+        Debug.Log("Damage otettu, " + health + " jäljellä"); //tulostetaan "Damage otettu"
         durationTimer = 0; //asetetaan durationTimer nollaan
         overlay.color = new Color(overlay.color.r, overlay.color.g, overlay.color.b, 1); //asetetaan overlayn v�ri t�ydeksi punaiseksi
     }
@@ -95,6 +95,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health <= 0) //jos pelaajan health on pienempi tai yht�suuri kuin nolla
         {
+            // Debug.Log("You died.");
             playerDead = true; //merkit��n pelaaja kuolleeksi
         }
     }
@@ -139,7 +140,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.gameObject.CompareTag("FootprintEnemy"))
         {
-            health = 0f;
+            TakeDamage(100f);
         }
     }
 

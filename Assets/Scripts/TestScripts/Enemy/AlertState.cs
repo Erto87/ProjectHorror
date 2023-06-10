@@ -96,7 +96,7 @@ public class AlertState : IEnemyState
         {
             //toteutuu jos säde osuu pelaajaan
             //jos säde osuu pelaajaan, vihu tunnistaa kohteen ja lähtee jahtaamaan
-            Debug.Log("pelaaja nähty");
+            // Debug.Log("pelaaja nähty");
             enemy.chaseTarget = enemy.playerRef.transform;
             ToChaseState();
         }

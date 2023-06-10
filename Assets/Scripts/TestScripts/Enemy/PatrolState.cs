@@ -112,7 +112,7 @@ public class PatrolState : IEnemyState
 
         if (enemy.canSeePlayer)
         {
-            Debug.Log("pelaaja nähty");
+            // Debug.Log("pelaaja nähty");
             enemy.chaseTarget = enemy.playerRef.transform;
             ToChaseState();
         }

@@ -16,6 +16,7 @@ public class StatePatternEnemy : MonoBehaviour
 
     public PlayerHealth playerHealth;
     public Collider enemysCollider;
+    public float attackTimer = 0f;
 
     public Transform chaseTarget;
 
@@ -113,7 +114,7 @@ public class StatePatternEnemy : MonoBehaviour
                 if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
                 {
                     canSeePlayer = true;
-                    Debug.Log("Pelaaja näkyy");
+                    // Debug.Log("Pelaaja näkyy");
                     lastKnownPlayerPosition = target.position;
                 }
                 else

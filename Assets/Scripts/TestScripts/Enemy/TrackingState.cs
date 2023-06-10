@@ -23,7 +23,7 @@ public class TrackingState : IEnemyState
 
     public void ToChaseState()
     {
-        Debug.Log("jahdataan");
+        // Debug.Log("jahdataan");
         enemy.currentState = enemy.chaseState;
     }
 
@@ -44,6 +44,14 @@ public class TrackingState : IEnemyState
 
     public void OnCollisionEnter(Collision other) 
     {
+        // if (other.gameObject.CompareTag("Player"))
+        // {
+        //     // enemy.enemysCollider.enabled = false;
+        //     enemy.enemysCollider.enabled = false;
+        //     enemy.navMeshAgent.speed = 0f;
+        //     Debug.Log("TO ATTACK STATE");
+        //     ToAttackState();
+        // }
         
     }
 
@@ -92,7 +100,7 @@ public class TrackingState : IEnemyState
         {
             //jos säde osuu target-layerilla olevaan kohteeseen (sillä layerilla on VAIN pelaaja), vihu näkee pelaajan.
             //jos käytössä olisi vanha raycast niin laittaisin "enemy.chaseTarget = hit.transform;
-            Debug.Log("pelaaja nähty");
+            // Debug.Log("pelaaja nähty");
             enemy.chaseTarget = enemy.playerRef.transform;//jahtaa pelaajaa
             ToChaseState();
         }

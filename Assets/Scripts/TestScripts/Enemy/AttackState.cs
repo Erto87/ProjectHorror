@@ -7,8 +7,6 @@ public class AttackState : IEnemyState
 
     StatePatternEnemy enemy;
 
-    private float attackTimer;
-
     public AttackState(StatePatternEnemy statePatternEnemy)//kun statepatternenemyn new patrolstate(); rivi ajetaan ni tää ajetaan
     {
         enemy = statePatternEnemy; //enemy muuttuja on koko StatePatternEnemy -luokka. Näin päästään käsiksi StatePatternEnemyn muuttujiin ja funktioihin.
@@ -26,14 +24,14 @@ public class AttackState : IEnemyState
 
     public void ToTrackingState()
     {
+        enemy.attackTimer = 0f;
         enemy.currentState = enemy.trackingState;
-         attackTimer = 0f;
     }
 
     public void ToAlertState()
     {
+        enemy.attackTimer = 0f;
         enemy.currentState = enemy.alertState;
-         attackTimer = 0f;
     }
 
     public void OnTriggerEnter(Collider other)
@@ -43,13 +41,19 @@ public class AttackState : IEnemyState
 
     public void OnCollisionEnter(Collision other) 
     {
-        
+        // if (other.gameObject.CompareTag("Player"))
+        // {
+        //     // enemy.enemysCollider.enabled = false;
+        //     enemy.enemysCollider.enabled = false;
+        //     enemy.navMeshAgent.speed = 0f;
+        //     Debug.Log("TO ATTACK STATE");
+        //     ToAttackState();
+        //}
     }
 
 
     public void ToChaseState()
     {
-        attackTimer = 0f;
         enemy.currentState = enemy.chaseState;
     }
 
@@ -61,15 +65,20 @@ public class AttackState : IEnemyState
 
     private void Attack()
     {
-        attackTimer += Time.deltaTime;
+        // enemy.playerHealth.TakeDamage(35f);
 
-        Debug.Log("attacking");
-        enemy.navMeshAgent.speed = 0f;
+        enemy.attackTimer += Time.deltaTime;
 
-        if (attackTimer > 1f)
+        // Debug.Log("attacking");
+
+        if (enemy.attackTimer > 2f)
         {
+            Debug.Log(enemy.attackTimer);
+            Debug.Log("attacking");
             enemy.enemysCollider.enabled = true;
+            enemy.navMeshAgent.speed = 5f;
             ToChaseState();
+            
         }
 
     }
@@ -87,26 +96,17 @@ public class AttackState : IEnemyState
         {
             //toteutuu jos säde osuu pelaajaan
             //jos säde osuu pelaajaan, vihu tunnistaa kohteen ja lähtee jahtaamaan
-            Debug.Log("pelaaja on näkyvissä");
+            // Debug.Log("pelaaja on näkyvissä");
             enemy.chaseTarget = hit.transform;
             enemy.lastKnownPlayerPosition = enemy.chaseTarget.position;
         }
         else
         {
-            Debug.Log("Pelaaja hävisi");
-            ToTrackingState();
+            // Debug.Log("Pelaaja hävisi");
+            // ToTrackingState();
+
         }
 
     }
 
-    IEnumerator PreventAnotherAttack()
-    {
-        yield return new WaitForSeconds(1.05f);
-        {
-            Debug.Log("COROUTINE STARTED");
-            enemy.navMeshAgent.speed = 5f;
-            enemy.enemysCollider.enabled = true;
-
-        }
-    }
 }

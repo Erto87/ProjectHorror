@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
             crouchTimer += Time.deltaTime;
             float p = crouchTimer / 1;
             p *= p;
-            if (crouching) // Jos pelaaja kyykkää
+            if (crouching) // Jos pelaaja kyykkï¿½ï¿½
             {
              controller.height = Mathf.Lerp(controller.height, 1, p);
                 speed = 3f;
@@ -52,18 +52,18 @@ public class PlayerMovement : MonoBehaviour
             }
             
         }
-        if (playerHealth.playerDead == true) // Jos pelaaja on kuollut, asetetaan animaatio "isDead" päälle
+        if (playerHealth.playerDead == true) // Jos pelaaja on kuollut, asetetaan animaatio "isDead" pï¿½ï¿½lle
         {
-            Debug.Log("NYT KUOLTIIN");
+            // Debug.Log("NYT KUOLTIIN");
             animator.SetBool("isDead", true);
             
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && crouching == false)  // Jos pelaaja painaa vasenta Shift-näppäintä ja ei ole kyykyssä, nopeutetaan pelaajaa
+        if (Input.GetKeyDown(KeyCode.LeftShift) && crouching == false)  // Jos pelaaja painaa vasenta Shift-nï¿½ppï¿½intï¿½ ja ei ole kyykyssï¿½, nopeutetaan pelaajaa
         {
             speed = 8f;
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift) && crouching == false) // Jos pelaaja vapauttaa vasemman Shift-näppäimen ja ei ole kyykyssä, palautetaan nopeus normaaliksi
+        if (Input.GetKeyUp(KeyCode.LeftShift) && crouching == false) // Jos pelaaja vapauttaa vasemman Shift-nï¿½ppï¿½imen ja ei ole kyykyssï¿½, palautetaan nopeus normaaliksi
         { 
             speed = 5f;
         }
@@ -71,13 +71,13 @@ public class PlayerMovement : MonoBehaviour
     }
     public void ProcessMove(Vector2 input)
     {
-        // Lasketaan liikkumissuunta käyttäen input-vektoria
+        // Lasketaan liikkumissuunta kï¿½yttï¿½en input-vektoria
         Vector3 moveDirection = Vector3.zero;
         moveDirection.x = input.x;
         moveDirection.z = input.y;
         
-        controller.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime); // Liikutetaan pelaajaa käyttäen CharacterControlleria
-        playerVelocity.y += gravity * Time.deltaTime; // Päivitetään pelaajan pystysuuntainen nopeus käyttäen painovoimaa
+        controller.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime); // Liikutetaan pelaajaa kï¿½yttï¿½en CharacterControlleria
+        playerVelocity.y += gravity * Time.deltaTime; // Pï¿½ivitetï¿½ï¿½n pelaajan pystysuuntainen nopeus kï¿½yttï¿½en painovoimaa
 
         if (isGrounded && playerVelocity.y < 0)
             playerVelocity.y = -2f;
