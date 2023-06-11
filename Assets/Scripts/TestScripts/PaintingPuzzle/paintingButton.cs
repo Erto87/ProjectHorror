@@ -21,6 +21,8 @@ public class paintingButton : MonoBehaviour
     public Collider[] buttonColliders;
     public AudioSource Oopsie;
     public Animator silverDoorAnim;
+    public Animator safe;
+    public GameObject goldenKey;
 
 
 
@@ -217,6 +219,10 @@ public class paintingButton : MonoBehaviour
         wrongClicks = 0;
 
         Debug.Log("congrats, you got it pal");
+        safe = GameObject.FindGameObjectWithTag("Safe").GetComponent<Animator>();
+        safe.enabled = true;
+        goldenKey.SetActive(true);
+
     }
 
     private void WrongSequence()
