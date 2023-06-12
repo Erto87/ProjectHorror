@@ -68,7 +68,7 @@ public class ChaseState : IEnemyState
 
     void Chase()
     {
-        enemy.navMeshAgent.speed = 5f;
+        enemy.navMeshAgent.speed = 6f;
         enemy.indicator.material.color = Color.red;
         enemy.navMeshAgent.destination = enemy.chaseTarget.position;
         enemy.navMeshAgent.isStopped = false;
