@@ -6,6 +6,7 @@ public class ChaseState : IEnemyState
 {
 
     StatePatternEnemy enemy;
+    
 
 
     public ChaseState(StatePatternEnemy statePatternEnemy)//kun statepatternenemyn new patrolstate(); rivi ajetaan ni tää ajetaan
@@ -27,6 +28,7 @@ public class ChaseState : IEnemyState
             enemy.enemysCollider.enabled = false;
             enemy.navMeshAgent.speed = 0f;
             Debug.Log("TO ATTACK STATE");
+            enemy.hit.Play();
             ToAttackState();
         }
     }

@@ -41,6 +41,7 @@ public class AlertState : IEnemyState
         searchTimer = 0f;
         searchTimer2 = 0f;
         enemy.currentState = enemy.chaseState;
+        enemy.angle = 360;
     }
 
     public void ToPatrolState()
@@ -48,6 +49,7 @@ public class AlertState : IEnemyState
         searchTimer = 0f;
         searchTimer2 = 0f;
         enemy.currentState = enemy.patrolState;
+        enemy.angle = enemy.previousAngle;
     }
 
     public void ToTrackingState()
@@ -92,7 +94,8 @@ public class AlertState : IEnemyState
         //näkösäde on raycast
         RaycastHit hit; //info mihin raycast osuu
 
-        if ((Physics.Raycast(enemy.eye.position, enemy.eye.forward, out hit, enemy.sightRange) && hit.collider.CompareTag("Player")) || enemy.canSeePlayer)
+        // if ((Physics.Raycast(enemy.eye.position, enemy.eye.forward, out hit, enemy.sightRange) && hit.collider.CompareTag("Player")) || enemy.canSeePlayer)
+        if (enemy.canSeePlayer)
         {
             //toteutuu jos säde osuu pelaajaan
             //jos säde osuu pelaajaan, vihu tunnistaa kohteen ja lähtee jahtaamaan

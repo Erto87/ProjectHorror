@@ -26,6 +26,8 @@ public class PatrolState : IEnemyState
     {
         Debug.Log("jahdataan");
         enemy.currentState = enemy.chaseState;
+        enemy.laugh.Play();
+        enemy.angle = 360f;
     }
     public void ToAttackState()
     {

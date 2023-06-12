@@ -59,6 +59,8 @@ public class StatePatternEnemy : MonoBehaviour
     public Animator anim;
 
     public bool canSeePlayer;
+    public AudioSource laugh;
+    public AudioSource hit;
 
 
     private void Awake()

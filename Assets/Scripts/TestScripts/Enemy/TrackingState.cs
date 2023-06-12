@@ -68,6 +68,7 @@ public class TrackingState : IEnemyState
         public void ToAlertState()
     {
         enemy.currentState = enemy.alertState;
+        enemy.angle = 180f;
     }
 
     void Track()
