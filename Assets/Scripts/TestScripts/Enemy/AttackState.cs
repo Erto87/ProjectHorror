@@ -71,7 +71,7 @@ public class AttackState : IEnemyState
 
         // Debug.Log("attacking");
 
-        if (enemy.attackTimer > 1f)
+        if (enemy.attackTimer > 1.2f)
         {
             Debug.Log(enemy.attackTimer);
             Debug.Log("attacking");
