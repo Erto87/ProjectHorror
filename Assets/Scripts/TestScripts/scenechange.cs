@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class scenechange : MonoBehaviour
 {
+    public GameObject credits;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,5 +32,13 @@ public class scenechange : MonoBehaviour
             Debug.Log("juhoscene");
             SceneManager.LoadScene("JuhoTestScene");
         }
+    }
+    public void Credits()
+    {
+        credits.SetActive(true);
+    }
+    public void ReturnMenu()
+    {
+        credits.SetActive(false);
     }
 }
