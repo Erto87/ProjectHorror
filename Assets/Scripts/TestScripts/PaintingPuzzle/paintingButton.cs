@@ -51,18 +51,18 @@ public class paintingButton : MonoBehaviour
         int i = 0;
         rend = paintings[i].GetComponent<SpriteRenderer>();
 
-        if (playerClicked == 5 && wrongClicks != 0)
-        {
-            rend.sprite = eyesClosed[i];
-            playerClicked = 51;
-        }
+        // if (playerClicked == 5 && wrongClicks != 0)
+        // {
+        //     rend.sprite = eyesClosed[i];
+        //     playerClicked = 51;
+        // }
 
         if (playerClicked == 5 && wrongClicks == 0)
         {
             playerClicked = 51;
             rend.sprite = eyesClosed[i];
         }
-        else if (playerClicked != 5 || wrongClicks != 0)
+        else if (playerClicked != 5)
         {
             wrongClicks = wrongClicks + 1;
         }
@@ -78,17 +78,17 @@ public class paintingButton : MonoBehaviour
         int i = 1;
         rend = paintings[i].GetComponent<SpriteRenderer>();
 
-        if (playerClicked == 51463 && wrongClicks != 0)
-        {
-            rend.sprite = eyesClosed[i];
-        }
+        // if (playerClicked == 51463 && wrongClicks != 0)
+        // {
+        //     rend.sprite = eyesClosed[i];
+        // }
 
         if (playerClicked == 51463 && wrongClicks == 0)
         {
             playerClicked = 514632;
             rend.sprite = eyesClosed[i];
         }
-        else if (playerClicked != 51463 || wrongClicks != 0)
+        else if (playerClicked != 51463)
         {
             wrongClicks = wrongClicks + 1;
         }
@@ -109,18 +109,18 @@ public class paintingButton : MonoBehaviour
         int i = 2;
         rend = paintings[i].GetComponent<SpriteRenderer>();
 
-        if (playerClicked == 5146 && wrongClicks != 0)
-        {
-            rend.sprite = eyesClosed[i];
-            playerClicked = 51463;
-        }
+        // if (playerClicked == 5146 && wrongClicks != 0)
+        // {
+        //     rend.sprite = eyesClosed[i];
+        //     playerClicked = 51463;
+        // }
 
         if (playerClicked == 5146 && wrongClicks == 0)
         {
             playerClicked = 51463;
             rend.sprite = eyesClosed[i];
         }
-        else if (playerClicked != 5146 || wrongClicks != 0)
+        else if (playerClicked != 5146)
         {
             wrongClicks = wrongClicks + 1;
         }
@@ -136,18 +136,18 @@ public class paintingButton : MonoBehaviour
         int i = 3;
         rend = paintings[i].GetComponent<SpriteRenderer>();
 
-        if (playerClicked == 51 && wrongClicks != 0)
-        {
-            rend.sprite = eyesClosed[i];
-            playerClicked = 514;
-        }
+        // if (playerClicked == 51 && wrongClicks != 0)
+        // {
+        //     rend.sprite = eyesClosed[i];
+        //     playerClicked = 514;
+        // }
 
         if (playerClicked == 51 && wrongClicks == 0)
         {
             playerClicked = 514;
             rend.sprite = eyesClosed[i];
         }
-        else if (playerClicked != 51 || wrongClicks != 0)
+        else if (playerClicked != 51)
         {
             wrongClicks = wrongClicks + 1;
         }
@@ -166,8 +166,7 @@ public class paintingButton : MonoBehaviour
 
         if (playerClicked == 0 && wrongClicks != 0)
         {
-            rend.sprite = eyesClosed[i];
-            playerClicked = 5;
+            playerClicked = 9;
         }
 
         if (playerClicked == 0 && wrongClicks == 0)
@@ -175,7 +174,7 @@ public class paintingButton : MonoBehaviour
             playerClicked = 5;
             rend.sprite = eyesClosed[i];
         }
-        else if (playerClicked != 0 || wrongClicks != 0)
+        else if (playerClicked != 0)
         {
             wrongClicks = wrongClicks + 1;
         }
@@ -191,18 +190,18 @@ public class paintingButton : MonoBehaviour
         int i = 5;
         rend = paintings[i].GetComponent<SpriteRenderer>();
 
-        if (playerClicked == 514 && wrongClicks != 0)
-        {
-            rend.sprite = eyesClosed[i];
-            playerClicked = 5146;
-        }
+        // if (playerClicked == 514 && wrongClicks != 0)
+        // {
+        //     rend.sprite = eyesClosed[i];
+        //     playerClicked = 5146;
+        // }
 
         if (playerClicked == 514 && wrongClicks == 0)
         {
             playerClicked = 5146;
             rend.sprite = eyesClosed[i];
         }
-        else if (playerClicked != 514 || wrongClicks != 0)
+        else if (playerClicked != 514)
         {
             wrongClicks = wrongClicks + 1;
         }
@@ -215,8 +214,10 @@ public class paintingButton : MonoBehaviour
 
     private void CorrectSequenceMethod()
     {
-        playerClicked = 0;
-        wrongClicks = 0;
+        for (int i = 0; i < buttonColliders.Length; i++)
+        {
+            buttonColliders[i].enabled = false;
+        }
 
         Debug.Log("congrats, you got it pal");
         safe = GameObject.FindGameObjectWithTag("Safe").GetComponent<Animator>();
