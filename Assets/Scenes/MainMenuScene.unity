@@ -1042,7 +1042,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Project Manager\n\n\n\nProgrammers\n\n\n\n\nGraphic Desingers\n\n\n\n\n\nArt
+  m_text: "Project Manager\n\n\n\nProgrammers\n\n\n\n\nGraphic Designers\n\n\n\n\n\nArt
     & Animation\n\n\n\n\n\n\n\nEnemy Design \n& Animation\n\n\n\nAudio & Inventory\nManagement\n\n\n\nMenu
     Design\n& Implementation\n\n\nPuzzle Design & \nMechanics\n\n"
   m_isRightToLeft: 0
