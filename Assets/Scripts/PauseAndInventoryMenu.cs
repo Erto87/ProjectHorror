@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class PauseAndInventoryMenu : MonoBehaviour
 {
+    public Article article;
     public  bool gameIsPaused = false;//bool indicating if the game is paused
     public GameObject pauseMenuUi;// reference to the pause menu UI
     public Examine examine;// reference to the Examine script
 
     void Start()
     {
+        article = GameObject.FindGameObjectWithTag("Article").GetComponent<Article>();
         examine = FindObjectOfType<Examine>();// find the Examine script in the scene
     }
 
@@ -37,7 +39,12 @@ public class PauseAndInventoryMenu : MonoBehaviour
    public void Resume()// method to resume the game
     {
         pauseMenuUi.SetActive(false);// hide the pause menu UI
-        Time.timeScale = 1f;// set the time scale to normal speed
+
+        if (article.articleText.activeInHierarchy == false)
+        {
+            Time.timeScale = 1f;// set the time scale to normal speed
+        }
+
         gameIsPaused = false;// set the gameIsPaused bool to false
         Cursor.lockState = CursorLockMode.Locked;
     }
