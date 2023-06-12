@@ -20,6 +20,8 @@ public class paintingButton : MonoBehaviour
 
     public Collider[] buttonColliders;
     public AudioSource Oopsie;
+    public AudioSource correct;
+    public AudioSource safeCreak;
     public Animator silverDoorAnim;
     public Animator safe;
     public GameObject goldenKey;
@@ -221,8 +223,10 @@ public class paintingButton : MonoBehaviour
 
         Debug.Log("congrats, you got it pal");
         safe = GameObject.FindGameObjectWithTag("Safe").GetComponent<Animator>();
-        safe.enabled = true;
+        // safe.enabled = true;
+        StartCoroutine(SafeOpenDelay());
         goldenKey.SetActive(true);
+        correct.Play();
 
     }
 
@@ -248,5 +252,14 @@ public class paintingButton : MonoBehaviour
 
         Oopsie.Play();
         
+    }
+
+    IEnumerator SafeOpenDelay()
+    {
+        yield return new WaitForSeconds(2);
+        {
+            safe.enabled = true;
+            safeCreak.Play();
+        }
     }
 }
