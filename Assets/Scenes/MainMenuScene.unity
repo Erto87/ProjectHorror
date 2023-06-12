@@ -1043,8 +1043,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Project Manager\n\n\n\nProgrammers\n\n\n\n\nGraphic Desingers\n\n\n\n\n\nArt
-    & Animation\n\n\n\n\n\n\n\nEnemy Design \n& Animation\n\n\n\nPuzzle Design &
-    \nMechanics\n\n"
+    & Animation\n\n\n\n\n\n\n\nEnemy Design \n& Animation\n\n\n\nAudio & Inventory\nManagement\n\n\n\nMenu
+    Design\n& Implementation\n\n\nPuzzle Design & \nMechanics\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6c9a9fc521dbb1e4cb57ed18417d0c95, type: 2}
   m_sharedMaterial: {fileID: 6542153374456852358, guid: 6c9a9fc521dbb1e4cb57ed18417d0c95, type: 2}
@@ -6272,7 +6272,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Juho Savinainen\n\n\n\nTero Kettunen\nSaija Remes\nJuho Savinainen\n\n\nMiika
     Lipponen\nAada L\xE4nsikallio\nDebby Tarujoki\n\n\n\nMiika Lipponen\nAada L\xE4nsikallio\nTero
-    Kettunen\nSaija Remes\nDebby Tarujoki\n\n\n\nMiika Lipponen\n\n\n\n\nSaija Remes"
+    Kettunen\nSaija Remes\nDebby Tarujoki\n\n\n\nMiika Lipponen\n\n\n\n\nTero Kettunen\n\n\n\n\nJuho
+    Savinainen\n\n\n\nSaija Remes"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6c9a9fc521dbb1e4cb57ed18417d0c95, type: 2}
   m_sharedMaterial: {fileID: 6542153374456852358, guid: 6c9a9fc521dbb1e4cb57ed18417d0c95, type: 2}
