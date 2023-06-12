@@ -92,7 +92,7 @@ public class AlertState : IEnemyState
         Debug.DrawRay(enemy.eye.position, enemy.eye.forward * enemy.sightRange, Color.yellow);
 
         //näkösäde on raycast
-        RaycastHit hit; //info mihin raycast osuu
+        // RaycastHit hit; //info mihin raycast osuu
 
         // if ((Physics.Raycast(enemy.eye.position, enemy.eye.forward, out hit, enemy.sightRange) && hit.collider.CompareTag("Player")) || enemy.canSeePlayer)
         if (enemy.canSeePlayer)
