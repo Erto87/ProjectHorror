@@ -18,7 +18,7 @@ public class scenechange : MonoBehaviour
     }
     public void NewGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("JuhoTestScene");
     }
     public void ExitGame()
     {
