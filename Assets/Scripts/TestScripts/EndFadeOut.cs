@@ -8,6 +8,7 @@ public class EndFadeOut : MonoBehaviour
     public PlayerLook playerLook;
     public GameObject fadeOut;
 
+
     private void Start() 
     {
         playerLook = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLook>();
@@ -19,11 +20,20 @@ public class EndFadeOut : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            // controller.enabled = false;
             playerLook.ySensitivity = 0f;
             playerLook.xSensitivity = 0f;
             fadeOut.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
+            StartCoroutine(StopPlayerMovement());
         }
     }
+
+    IEnumerator StopPlayerMovement()
+    {
+        yield return new WaitForSeconds(1.5f);
+        {
+            controller.enabled = false;
+        }
+    }
+
 }
