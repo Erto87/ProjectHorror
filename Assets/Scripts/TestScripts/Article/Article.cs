@@ -8,6 +8,7 @@ public class Article : MonoBehaviour
     public GameObject closedDoor;
     public GameObject brokenDoor;
     public GameObject player;
+    public GameObject articleText;
 
     private float distanceToClue;
     private bool touchedClue = false;
@@ -15,14 +16,12 @@ public class Article : MonoBehaviour
 
     private void Start() 
     {
-        
+        touchedClue = false;
         
     }
 
     private void OnMouseDown() 
     {
-        
-    
 
     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -31,13 +30,21 @@ public class Article : MonoBehaviour
         distanceToClue = Vector3.Distance(this.gameObject.transform.position, player.transform.position);
 
 
-        if (distanceToClue < 2.5f && Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag == "Article")
+        if (distanceToClue < 2.5f && Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag == "Article" && touchedClue == false)
         {
+            articleText.SetActive(true);
+            touchedClue = true;
+            Time.timeScale = 0f;
+
+        }
+        else if (distanceToClue < 2.5f && Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag == "Article" && touchedClue == true)
+        {
+            Time.timeScale = 1f;
+            articleText.SetActive(false);
+            touchedClue = false;
             closedDoor.SetActive(false);
             brokenDoor.SetActive(true);
-            touchedClue = true;
-
-
+            
         }
         
     }
