@@ -62,7 +62,7 @@ public class paintingButton : MonoBehaviour
             playerClicked = 51;
             rend.sprite = eyesClosed[i];
         }
-        else if (playerClicked != 5)
+        else if (playerClicked != 5 || wrongClicks != 0)
         {
             wrongClicks = wrongClicks + 1;
         }
@@ -88,7 +88,7 @@ public class paintingButton : MonoBehaviour
             playerClicked = 514632;
             rend.sprite = eyesClosed[i];
         }
-        else if (playerClicked != 51463)
+        else if (playerClicked != 51463 || wrongClicks != 0)
         {
             wrongClicks = wrongClicks + 1;
         }
@@ -120,7 +120,7 @@ public class paintingButton : MonoBehaviour
             playerClicked = 51463;
             rend.sprite = eyesClosed[i];
         }
-        else if (playerClicked != 5146)
+        else if (playerClicked != 5146 || wrongClicks != 0)
         {
             wrongClicks = wrongClicks + 1;
         }
@@ -147,7 +147,7 @@ public class paintingButton : MonoBehaviour
             playerClicked = 514;
             rend.sprite = eyesClosed[i];
         }
-        else if (playerClicked != 51)
+        else if (playerClicked != 51 || wrongClicks != 0)
         {
             wrongClicks = wrongClicks + 1;
         }
@@ -174,7 +174,7 @@ public class paintingButton : MonoBehaviour
             playerClicked = 5;
             rend.sprite = eyesClosed[i];
         }
-        else if (playerClicked != 0)
+        else if (playerClicked != 0 || wrongClicks != 0)
         {
             wrongClicks = wrongClicks + 1;
         }
@@ -201,7 +201,7 @@ public class paintingButton : MonoBehaviour
             playerClicked = 5146;
             rend.sprite = eyesClosed[i];
         }
-        else if (playerClicked != 514)
+        else if (playerClicked != 514 || wrongClicks != 0)
         {
             wrongClicks = wrongClicks + 1;
         }
