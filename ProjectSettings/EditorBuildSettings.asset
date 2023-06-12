@@ -15,9 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
-    path: Assets/Scenes/JuhoTestScene.unity
+    path: 
     guid: ebe7077972bc7f44485b59f5a2ef60b7
   - enabled: 1
     path: Assets/Scenes/Saija2.unity
     guid: 6a734f5ef8b84d44fa5a451a14fb6daa
+  - enabled: 1
+    path: Assets/Scenes/JuhoTestScene.unity
+    guid: 7977981bdd5c9fc46aec849dea61de6b
   m_configObjects: {}
