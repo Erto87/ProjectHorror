@@ -23,14 +23,16 @@ public class PlayerHealth : MonoBehaviour
     public Image greenhealth;
     public bool healtgain;
     public AudioSource neckSnap;
+    public GameObject deathMenu;
     
+
     void Start()
     {
         health = maxHealth;
         overlay.color = new Color(overlay.color.r, overlay.color.g, overlay.color.b, 0);
         greenhealth.color = new Color(overlay.color.r, overlay.color.g, overlay.color.b, 0);
         animator = GetComponent<Animator>();
-       DontDestroyOnLoad(gameObject);
+    //    DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
@@ -98,6 +100,16 @@ public class PlayerHealth : MonoBehaviour
         {
             // Debug.Log("You died.");
             playerDead = true; //merkit��n pelaaja kuolleeksi
+            StartCoroutine(DeathMenuActivation());
+        }
+    }
+
+    IEnumerator DeathMenuActivation()
+    {
+        yield return new WaitForSeconds(2f);
+        {         
+            deathMenu.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
         }
     }
     public void HealthScreens()

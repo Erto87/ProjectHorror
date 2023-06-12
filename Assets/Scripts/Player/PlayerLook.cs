@@ -10,8 +10,10 @@ public class PlayerLook : MonoBehaviour
     public float xSensitivity = 30f;
     public float ySensitivity = 30f;
 
+
     void Start()
     {
+
         Cursor.lockState = CursorLockMode.Locked;
     }
    
@@ -20,15 +22,15 @@ public class PlayerLook : MonoBehaviour
         float mouseX = input.x;
         float mouseY = input.y;
 
-        // Lasketaan kameran rotation ylös ja alas katsomista varten
+        // Lasketaan kameran rotation ylï¿½s ja alas katsomista varten
 
 
         xRotation -= (mouseY * Time.deltaTime) * ySensitivity;
         xRotation = Mathf.Clamp(xRotation, -80f, 80f);
 
-        // Sovitetaan tämä rotation kameran rotationiin
+        // Sovitetaan tï¿½mï¿½ rotation kameran rotationiin
         cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
-        // kääntää pelaaja kastomaanvasemmalle ja oikealle.
+        // kï¿½ï¿½ntï¿½ï¿½ pelaaja kastomaanvasemmalle ja oikealle.
         transform.Rotate(Vector3.up * (mouseX * Time.deltaTime) * xSensitivity);
     }
 
