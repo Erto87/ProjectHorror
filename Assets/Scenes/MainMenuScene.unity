@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00062213646, g: 0.00040452275, b: 0.0006361058, a: 1}
+  m_IndirectSpecularColor: {r: 0.00024120693, g: 0.00033063442, b: 0.00050679, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1042,29 +1042,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Project Manager
-
-
-
-
-    Programmers
-
-
-
-
-
-    Grapich Desingers
-
-
-
-
-    Game
-    Puzzle Mechanic Desinger
-
-
-
-
-'
+  m_text: "Project Manager\n\n\n\nProgrammers\n\n\n\n\nGraphic Desingers\n\n\n\n\n\nArt
+    & Animation\n\n\n\n\n\n\n\nEnemy Design \n& Animation\n\n\n\nPuzzle Design &
+    \nMechanics\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6c9a9fc521dbb1e4cb57ed18417d0c95, type: 2}
   m_sharedMaterial: {fileID: 6542153374456852358, guid: 6c9a9fc521dbb1e4cb57ed18417d0c95, type: 2}
@@ -6290,8 +6270,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Juho Savinainen\n\n\n\nSaija Remes\nTero Kettunen\nJuho Savinainen\n\n\nAada
-    L\xE4nsikallio\nDebby Tarujoki\nMiika Lipponen\n\nSaija Remes\n\n\n\n"
+  m_text: "Juho Savinainen\n\n\n\nTero Kettunen\nSaija Remes\nJuho Savinainen\n\n\nMiika
+    Lipponen\nAada L\xE4nsikallio\nDebby Tarujoki\n\n\n\nMiika Lipponen\nAada L\xE4nsikallio\nTero
+    Kettunen\nSaija Remes\nDebby Tarujoki\n\n\n\nMiika Lipponen\n\n\n\n\nSaija Remes"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6c9a9fc521dbb1e4cb57ed18417d0c95, type: 2}
   m_sharedMaterial: {fileID: 6542153374456852358, guid: 6c9a9fc521dbb1e4cb57ed18417d0c95, type: 2}
