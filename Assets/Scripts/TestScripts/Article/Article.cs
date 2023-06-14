@@ -16,6 +16,11 @@ public class Article : MonoBehaviour
 
     private void Start() 
     {
+        closedDoor= GameObject.FindGameObjectWithTag("ClosedDoor");
+        //brokenDoor = Resources.FindObjectsOfTypeAll<BrokenDoor>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        //articleText = GameObject.FindGameObjectWithTag("ArticleText");
+
         touchedClue = false;
         
     }
