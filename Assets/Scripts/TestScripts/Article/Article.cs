@@ -56,4 +56,17 @@ public class Article : MonoBehaviour
         
     }
 
+    private void Update() 
+    {
+        if (touchedClue == true && Input.GetKey(KeyCode.Escape))
+        {
+            articleText.SetActive(false);
+            touchedClue = false;
+            closedDoor.SetActive(false);
+            brokenDoor.SetActive(true);
+
+        }
+    }
+
+
 }

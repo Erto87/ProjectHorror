@@ -14,11 +14,8 @@ public class ArticlePrefab : MonoBehaviour
 
     private void Start() 
     {
-        // closedDoor= GameObject.FindGameObjectWithTag("ClosedDoor");
-        //brokenDoor = Resources.FindObjectsOfTypeAll<BrokenDoor>();
-        player = GameObject.FindGameObjectWithTag("Player");
-        //articleText = GameObject.FindGameObjectWithTag("ArticleText");
 
+        player = GameObject.FindGameObjectWithTag("Player");
         touchedClue = false;
         
     }
@@ -45,9 +42,16 @@ public class ArticlePrefab : MonoBehaviour
             Time.timeScale = 1f;
             articleText.SetActive(false);
             touchedClue = false;
-            // closedDoor.SetActive(false);
-            // brokenDoor.SetActive(true);
             
+        }
+    }
+
+    private void Update() 
+    {
+        if (touchedClue == true && Input.GetKey(KeyCode.Escape))
+        {
+            articleText.SetActive(false);
+            touchedClue = false;
         }
         
     }
