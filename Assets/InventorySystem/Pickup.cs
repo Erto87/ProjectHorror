@@ -8,9 +8,12 @@ public class Pickup : MonoBehaviour
     public GameObject itemButton;// The UI element that represents the item being picked up
     public string InteractableObject;
 
+    public Article article;
+
 
     public void Start()
     {
+        article = GetComponent<Article>();
         inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();// Finds the player's inventory
     }
 
@@ -19,16 +22,25 @@ public class Pickup : MonoBehaviour
     {
         for (int i = 0; i < inventory.slots.Length; i++)// Loop through each slot in the player's inventory
         {
+      
+                if (inventory.isFull[i] == false) // If the current slot is not already full
+                {
+                    if (gameObject.CompareTag("Article") && article.pickUpFirstTime == false)
+                    {
+                    Debug.Log("Lue ensin");
 
-            if (inventory.isFull[i] == false) // If the current slot is not already full
-            {
-                inventory.isFull[i] = true;// Set the slot to be full
-                GameObject uiInstance = Instantiate(itemButton, inventory.slots[i].transform, false);// Instantiate the item button UI element inside the slot
-                uiInstance.GetComponent<ItemSpawn>().interactGameObject = InteractableObject;
-                AudioManager.instance.PlaySFX("PickUpItem");// Play a sound effect to indicate that the item was picked up
-                Destroy(gameObject);// Destroy the item in the game world
-                break;// Exit the loop since the item has been successfully picked up
+                    }
+                    else
+                    {
+                    inventory.isFull[i] = true;// Set the slot to be full
+                    GameObject uiInstance = Instantiate(itemButton, inventory.slots[i].transform, false);// Instantiate the item button UI element inside the slot
+                    uiInstance.GetComponent<ItemSpawn>().interactGameObject = InteractableObject;
+                    AudioManager.instance.PlaySFX("PickUpItem");// Play a sound effect to indicate that the item was picked up
+                    Destroy(gameObject);// Destroy the item in the game world
+                    break;// Exit the loop since the item has been successfully picked up
+                    }
             }
+              
         }
     }
 }
