@@ -2419,7 +2419,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -703}
+  m_AnchoredPosition: {x: 0, y: -774}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &173682767
@@ -13681,7 +13681,8 @@ MonoBehaviour:
     WASD                       Movement\n                              MOUSE                     
     LookAround\n                              MOUSE1                    Open Doors/Interact\n                                
     \"E\"                        PickUp / Use Items\n                              
-    \"ESC\"                      Open Inventory"
+    \"ESC\"                      Open Inventory\n                              \"CTRL\"                    
+    Crouch"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6c9a9fc521dbb1e4cb57ed18417d0c95, type: 2}
   m_sharedMaterial: {fileID: 6542153374456852358, guid: 6c9a9fc521dbb1e4cb57ed18417d0c95, type: 2}
@@ -18797,7 +18798,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1899248662
 RectTransform:
   m_ObjectHideFlags: 0
