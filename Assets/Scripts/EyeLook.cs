@@ -12,6 +12,7 @@ public class EyeLook : MonoBehaviour
 
     void Start()
     {
+        eyeLookAt = GameObject.FindGameObjectWithTag("Player").transform;
         eyeBlinck = GetComponent<Renderer>();// Initialize the eyeBlink field by getting the renderer component of this game object
     }
 

@@ -8,7 +8,7 @@ public class FlashlightActivator : MonoBehaviour
 {
     public GameObject flashlightInHierarchy;
 
-     void Start()
+    void Start()
     {
        flashlightInHierarchy = GameObject.FindGameObjectWithTag("Flashlight");
     }
