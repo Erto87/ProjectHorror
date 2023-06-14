@@ -12,6 +12,7 @@ public class Article : MonoBehaviour
 
     private float distanceToClue;
     private bool touchedClue = false;
+    public bool pickUpFirstTime = false;
 
 
     private void Start() 
@@ -37,6 +38,7 @@ public class Article : MonoBehaviour
 
         if (distanceToClue < 2.5f && Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag == "Article" && touchedClue == false)
         {
+            pickUpFirstTime = true;
             articleText.SetActive(true);
             touchedClue = true;
             Time.timeScale = 0f;
