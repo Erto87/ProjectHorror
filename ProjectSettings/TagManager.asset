@@ -8,6 +8,14 @@ TagManager:
   - Light1
   - SpawnPoint
   - Reach
+  - Flashlight
+  - FootprintEnemy
+  - Safe
+  - Article
+  - Item
+  - Switch
+  - SilverDoor
+  - InventoryFullText
   layers:
   - Default
   - TransparentFX
@@ -20,7 +28,7 @@ TagManager:
   - 
   - Obstacle
   - Doors
-  - 
+  - Paintings
   - 
   - 
   - 
