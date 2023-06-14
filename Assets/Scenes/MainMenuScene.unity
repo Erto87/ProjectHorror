@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00024120693, g: 0.00033063442, b: 0.00050679, a: 1}
+  m_IndirectSpecularColor: {r: 0.00062213646, g: 0.00040452275, b: 0.0006361058, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1019,7 +1019,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -322, y: 130}
+  m_AnchoredPosition: {x: -368, y: 130}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &66830161
@@ -1042,9 +1042,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Project Manager\n\n\n\nProgrammers\n\n\n\n\nGraphic Designers\n\n\n\n\n\nArt
-    & Animation\n\n\n\n\n\n\n\nEnemy Design \n& Animation\n\n\n\nAudio & Inventory\nManagement\n\n\n\nMenu
-    Design\n& Implementation\n\n\nPuzzle Design & \nMechanics\n\n"
+  m_text: "Project Lead\n\n\n\nProgrammers\n\n\n\n\nGraphic Designers\n\n\n\n\n\nArt
+    & Animation\n\n\n\n\n\n\n\nEnemy Design \n& Animation\n\n\n\nAudio & Inventory\nManagement\n\n\n\nInteraction
+    & Health System Development\n\n\nMenu Design\n& Implementation\n\n\nPuzzle Design
+    & \nMechanics\n\n\nSpecial Thanks"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6c9a9fc521dbb1e4cb57ed18417d0c95, type: 2}
   m_sharedMaterial: {fileID: 6542153374456852358, guid: 6c9a9fc521dbb1e4cb57ed18417d0c95, type: 2}
@@ -2297,7 +2298,7 @@ Animator:
   m_GameObject: {fileID: 173682765}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4b367514b5e7fb3439e67914f9a51810, type: 2}
+  m_Controller: {fileID: 9100000, guid: 48773250f1105854fa8cb7ee77269f1b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6273,7 +6274,7 @@ MonoBehaviour:
   m_text: "Juho Savinainen\n\n\n\nTero Kettunen\nSaija Remes\nJuho Savinainen\n\n\nMiika
     Lipponen\nAada L\xE4nsikallio\nDebby Tarujoki\n\n\n\nMiika Lipponen\nAada L\xE4nsikallio\nTero
     Kettunen\nSaija Remes\nDebby Tarujoki\n\n\n\nMiika Lipponen\n\n\n\n\nTero Kettunen\n\n\n\n\nJuho
-    Savinainen\n\n\n\nSaija Remes"
+    Savinainen\n\n\n\nJuho Savinainen\n\n\n\nSaija Remes"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6c9a9fc521dbb1e4cb57ed18417d0c95, type: 2}
   m_sharedMaterial: {fileID: 6542153374456852358, guid: 6c9a9fc521dbb1e4cb57ed18417d0c95, type: 2}
