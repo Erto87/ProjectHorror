@@ -134,5 +134,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9ee51d1b2b1a1c41936460774ca00d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 7654527593397251996, guid: 3097e4f2635b5034190ba9124f91312f, type: 3}
+  item: {fileID: 5398651558412470283, guid: 2db6ef1faf7ac0e48a826dca9b696f1e, type: 3}
   interactGameObject: 
