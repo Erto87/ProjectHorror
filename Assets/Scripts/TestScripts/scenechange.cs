@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class scenechange : MonoBehaviour
 {
     public GameObject credits;
+    public GameObject howtoPlay;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,5 +41,11 @@ public class scenechange : MonoBehaviour
     public void ReturnMenu()
     {
         credits.SetActive(false);
+        howtoPlay.SetActive(false);
     }
+    public void HowToPlay()
+    {
+        howtoPlay.SetActive(true);
+    }
+    
 }
