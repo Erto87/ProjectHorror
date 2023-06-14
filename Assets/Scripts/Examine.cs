@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Examine : MonoBehaviour
@@ -29,7 +29,7 @@ public class Examine : MonoBehaviour
     private void Update()
     {
 
-        ClickObject();//Decide What Object To Examine
+        //ClickObject();//Decide What Object To Examine
 
         TurnObject();//Allows Object To Be Rotated
 
