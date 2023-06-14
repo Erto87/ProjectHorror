@@ -36,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6436819163323491770
 MeshFilter:
@@ -172,3 +172,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemButton: {fileID: 3008385022134450913, guid: 01dad7910692dfa41ba164e7b0e09c6a, type: 3}
   InteractableObject: LockedDoorSilver
+  article: {fileID: 0}
+  inventoryFullText: {fileID: 0}
