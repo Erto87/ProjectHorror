@@ -21,6 +21,7 @@ public class Article : MonoBehaviour
         //brokenDoor = Resources.FindObjectsOfTypeAll<BrokenDoor>();
         player = GameObject.FindGameObjectWithTag("Player");
         // articleText = GameObject.FindGameObjectWithTag("ArticleText");
+        pickUpFirstTime = false;
 
         touchedClue = false;
         
@@ -38,7 +39,6 @@ public class Article : MonoBehaviour
 
         if (distanceToClue < 2.5f && Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag == "Article" && touchedClue == false)
         {
-            pickUpFirstTime = true;
             articleText.SetActive(true);
             touchedClue = true;
             Time.timeScale = 0f;
@@ -46,6 +46,7 @@ public class Article : MonoBehaviour
         }
         else if (distanceToClue < 2.5f && Physics.Raycast(ray, out hit) && hit.collider.gameObject.tag == "Article" && touchedClue == true)
         {
+            pickUpFirstTime = true;
             Time.timeScale = 1f;
             articleText.SetActive(false);
             touchedClue = false;
@@ -60,10 +61,22 @@ public class Article : MonoBehaviour
     {
         if (touchedClue == true && Input.GetKey(KeyCode.Escape))
         {
+            pickUpFirstTime = true;
             articleText.SetActive(false);
             touchedClue = false;
             closedDoor.SetActive(false);
             brokenDoor.SetActive(true);
+
+        }
+
+        if (touchedClue == true && Input.GetKey(KeyCode.E))
+        {
+            pickUpFirstTime = true;
+            articleText.SetActive(false);
+            touchedClue = false;
+            closedDoor.SetActive(false);
+            brokenDoor.SetActive(true);
+            Time.timeScale = 1f;
 
         }
     }
