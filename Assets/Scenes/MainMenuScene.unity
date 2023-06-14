@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00062213646, g: 0.00040452275, b: 0.0006361058, a: 1}
+  m_IndirectSpecularColor: {r: 0.00024120693, g: 0.00033063442, b: 0.00050679, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6544,7 +6544,8 @@ MonoBehaviour:
   m_text: "Juho Savinainen\n\n\n\nTero Kettunen\nSaija Remes\nJuho Savinainen\n\n\nMiika
     Lipponen\nAada L\xE4nsikallio\nDebby Tarujoki\n\n\n\nMiika Lipponen\nAada L\xE4nsikallio\nTero
     Kettunen\nSaija Remes\nDebby Tarujoki\n\n\n\nMiika Lipponen\n\n\n\n\nTero Kettunen\n\n\n\n\nJuho
-    Savinainen\n\n\n\nJuho Savinainen\n\n\n\nSaija Remes"
+    Savinainen\n\n\n\nJuho Savinainen\n\n\n\nSaija Remes\n\n\n\nSaija's dad for borrowing
+    his face\n& Demi for awesome Photoshop skills"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6c9a9fc521dbb1e4cb57ed18417d0c95, type: 2}
   m_sharedMaterial: {fileID: 6542153374456852358, guid: 6c9a9fc521dbb1e4cb57ed18417d0c95, type: 2}
@@ -18798,7 +18799,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1899248662
 RectTransform:
   m_ObjectHideFlags: 0
