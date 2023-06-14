@@ -20,7 +20,7 @@ public class scenechange : MonoBehaviour
     }
     public void NewGame()
     {
-        SceneManager.LoadScene("JuhoTestScene");
+        SceneManager.LoadScene("Saija2");
     }
     public void ExitGame()
     {
@@ -31,7 +31,7 @@ public class scenechange : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             Debug.Log("juhoscene");
-            SceneManager.LoadScene("JuhoTestScene");
+            SceneManager.LoadScene("Saija2");
         }
     }
     public void Credits()
