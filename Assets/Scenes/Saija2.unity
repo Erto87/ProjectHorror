@@ -14,20 +14,20 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
-  m_LinearFogStart: 0
-  m_LinearFogEnd: 300
+  m_FogDensity: 0.015
+  m_LinearFogStart: 1
+  m_LinearFogEnd: 20
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
-  m_HaloStrength: 0.5
+  m_SubtractiveShadowColor: {r: 0.043787822, g: 0.13587798, b: 0.2264151, a: 1}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 9c1707f8303a54844bdb18124716cfa8, type: 2}
+  m_HaloStrength: 1
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.002428053, g: 0.002428053, b: 0.002428053, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5514,7 +5514,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 158262554}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -98.7, y: -1, z: -12.3}
+  m_LocalPosition: {x: -101.9, y: -1, z: -12.3}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6777,7 +6777,7 @@ GameObject:
   - component: {fileID: 179710035}
   - component: {fileID: 179710037}
   - component: {fileID: 179710036}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Painting3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7522,10 +7522,10 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.9826619, b: 0.9198113, a: 1}
   m_Intensity: 1
-  m_Range: 20
-  m_SpotAngle: 59
+  m_Range: 30
+  m_SpotAngle: 70
   m_InnerSpotAngle: 4
   m_CookieSize: 10
   m_Shadows:
@@ -7554,7 +7554,7 @@ Light:
       e32: 0
       e33: 1
     m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
+  m_Cookie: {fileID: 2800000, guid: 0a0ddc4787b7fa841bc63289c1aeb6bd, type: 3}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
   m_RenderMode: 0
@@ -11041,6 +11041,10 @@ PrefabInstance:
     - target: {fileID: 4902667631784996318, guid: fe08e783542088541982c9a274372f15, type: 3}
       propertyPath: m_Name
       value: Frame (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902667631784996318, guid: fe08e783542088541982c9a274372f15, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5711152088661751652, guid: fe08e783542088541982c9a274372f15, type: 3}
       propertyPath: m_RootOrder
@@ -18731,7 +18735,7 @@ GameObject:
   - component: {fileID: 490753014}
   - component: {fileID: 490753016}
   - component: {fileID: 490753015}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Painting5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20104,7 +20108,7 @@ GameObject:
   - component: {fileID: 503917541}
   - component: {fileID: 503917543}
   - component: {fileID: 503917542}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Painting6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28689,6 +28693,10 @@ PrefabInstance:
     - target: {fileID: 4902667631784996318, guid: fe08e783542088541982c9a274372f15, type: 3}
       propertyPath: m_Name
       value: Frame (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902667631784996318, guid: fe08e783542088541982c9a274372f15, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5711152088661751652, guid: fe08e783542088541982c9a274372f15, type: 3}
       propertyPath: m_RootOrder
@@ -43013,6 +43021,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Frame
       objectReference: {fileID: 0}
+    - target: {fileID: 4902667631784996318, guid: fe08e783542088541982c9a274372f15, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 5711152088661751652, guid: fe08e783542088541982c9a274372f15, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -44229,7 +44241,7 @@ GameObject:
   - component: {fileID: 1119327068}
   - component: {fileID: 1119327070}
   - component: {fileID: 1119327069}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Painting1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45675,6 +45687,10 @@ PrefabInstance:
     - target: {fileID: 4902667631784996318, guid: fe08e783542088541982c9a274372f15, type: 3}
       propertyPath: m_Name
       value: Frame (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4902667631784996318, guid: fe08e783542088541982c9a274372f15, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5711152088661751652, guid: fe08e783542088541982c9a274372f15, type: 3}
       propertyPath: m_RootOrder
@@ -49372,6 +49388,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Frame (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4902667631784996318, guid: fe08e783542088541982c9a274372f15, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 5711152088661751652, guid: fe08e783542088541982c9a274372f15, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -52781,7 +52801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6176781959316429342, guid: f4bd491e1a3f5184383a0f34b0cb8eda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.328
+      value: 3.009
       objectReference: {fileID: 0}
     - target: {fileID: 6176781959316429342, guid: f4bd491e1a3f5184383a0f34b0cb8eda, type: 3}
       propertyPath: m_LocalPosition.z
@@ -61444,7 +61464,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 0.92313266, b: 0.7971698, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -62825,7 +62845,7 @@ GameObject:
   - component: {fileID: 1563911404}
   - component: {fileID: 1563911406}
   - component: {fileID: 1563911405}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Painting2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -66019,6 +66039,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Frame (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4902667631784996318, guid: fe08e783542088541982c9a274372f15, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 5711152088661751652, guid: fe08e783542088541982c9a274372f15, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -66108,7 +66132,7 @@ GameObject:
   - component: {fileID: 1636416611}
   - component: {fileID: 1636416613}
   - component: {fileID: 1636416612}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Painting4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
