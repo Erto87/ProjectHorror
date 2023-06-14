@@ -40,7 +40,7 @@ public class PauseAndInventoryMenu : MonoBehaviour
     {
         pauseMenuUi.SetActive(false);// hide the pause menu UI
 
-        if (article.articleText.activeInHierarchy == false)
+        // if (article.articleText.activeInHierarchy == false)
         {
             Time.timeScale = 1f;// set the time scale to normal speed
         }

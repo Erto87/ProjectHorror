@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Article : MonoBehaviour
+public class ArticlePrefab : MonoBehaviour
 {
     
-    public GameObject closedDoor;
-    public GameObject brokenDoor;
     public GameObject player;
     public GameObject articleText;
 
@@ -19,7 +17,7 @@ public class Article : MonoBehaviour
         // closedDoor= GameObject.FindGameObjectWithTag("ClosedDoor");
         //brokenDoor = Resources.FindObjectsOfTypeAll<BrokenDoor>();
         player = GameObject.FindGameObjectWithTag("Player");
-        // articleText = GameObject.FindGameObjectWithTag("ArticleText");
+        //articleText = GameObject.FindGameObjectWithTag("ArticleText");
 
         touchedClue = false;
         
@@ -47,8 +45,8 @@ public class Article : MonoBehaviour
             Time.timeScale = 1f;
             articleText.SetActive(false);
             touchedClue = false;
-            closedDoor.SetActive(false);
-            brokenDoor.SetActive(true);
+            // closedDoor.SetActive(false);
+            // brokenDoor.SetActive(true);
             
         }
         
