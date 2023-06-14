@@ -140,7 +140,7 @@ Transform:
   m_Children:
   - {fileID: 4298032225439825796}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -96, z: 0}
 --- !u!33 &8507255461865037076
 MeshFilter:
@@ -238,6 +238,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemButton: {fileID: 5802909434524790490, guid: 82d377e5560679d4eb4fe8bbd4c70462, type: 3}
   InteractableObject: 
+  article: {fileID: 0}
+  inventoryFullText: {fileID: 0}
 --- !u!114 &8507255461865037082
 MonoBehaviour:
   m_ObjectHideFlags: 0

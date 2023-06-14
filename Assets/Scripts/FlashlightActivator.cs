@@ -8,7 +8,7 @@ public class FlashlightActivator : MonoBehaviour
 {
     public GameObject flashlightInHierarchy;
 
-     void Start()
+    void Start()
     {
        flashlightInHierarchy = GameObject.FindGameObjectWithTag("Flashlight");
     }
@@ -20,12 +20,12 @@ public class FlashlightActivator : MonoBehaviour
         {
             if (slot.transform.childCount > 0)
             {
-                Debug.Log("Jotain tuli inventaarioon");
+                //Debug.Log("Jotain tuli inventaarioon");
                 if (slot.transform.GetChild(0).GetComponent<ItemSpawn>().item.gameObject.name == "FlashlightREAL")
                 {
                     flashlightInHierarchy.gameObject.GetComponent<Light>().enabled = true;
 
-                    Debug.Log("Valo p‰‰lle");
+                    //Debug.Log("Valo p‰‰lle");
                 }
                 
             }

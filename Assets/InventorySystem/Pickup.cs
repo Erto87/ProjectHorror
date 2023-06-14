@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pickup : MonoBehaviour
 {
@@ -9,10 +10,13 @@ public class Pickup : MonoBehaviour
     public string InteractableObject;
 
     public Article article;
-
+    public GameObject inventoryFullText;
 
     public void Start()
     {
+        //inventoryFullText = GameObject.FindGameObjectWithTag("InventoryFullText");
+        inventoryFullText = GameObject.FindGameObjectWithTag("InventoryFullText");
+
         if (gameObject.GetComponent<Article>())
         {
             article = GetComponent<Article>();
@@ -24,27 +28,43 @@ public class Pickup : MonoBehaviour
 
     public void PickUpItem() // Called when the player picks up the item
     {
-        for (int i = 0; i < inventory.slots.Length; i++)// Loop through each slot in the player's inventory
+        bool inventoryFull = true; // Variable to track if inventory is full
+
+        for (int i = 0; i < inventory.slots.Length; i++)
         {
-      
-            if (inventory.isFull[i] == false) // If the current slot is not already full
+            if (inventory.isFull[i] == false)
             {
+                inventoryFull = false; // Set inventoryFull to false if an empty slot is found
+
                 if (gameObject.CompareTag("Article") && GetComponent<Article>() && article.pickUpFirstTime == false)
                 {
-                    Debug.Log("Lue ensin");
-
+                    //Debug.Log("Lue ensin");
                 }
-                    else
+                else
                 {
-                    inventory.isFull[i] = true;// Set the slot to be full
-                    GameObject uiInstance = Instantiate(itemButton, inventory.slots[i].transform, false);// Instantiate the item button UI element inside the slot
+                    inventory.isFull[i] = true;
+                    GameObject uiInstance = Instantiate(itemButton, inventory.slots[i].transform, false);
                     uiInstance.GetComponent<ItemSpawn>().interactGameObject = InteractableObject;
-                    AudioManager.instance.PlaySFX("PickUpItem");// Play a sound effect to indicate that the item was picked up
-                    Destroy(gameObject);// Destroy the item in the game world
-                    break;// Exit the loop since the item has been successfully picked up
+                    AudioManager.instance.PlaySFX("PickUpItem");
+                    Destroy(gameObject);
+                    break;
                 }
             }
-              
+        }
+
+        if (inventoryFull)
+        {
+           //Debug.Log("Inventaario on täynnä!"); // Display a message when the inventory is full
+            inventoryFullText.transform.GetChild(0).gameObject.SetActive(true);
+            StartCoroutine(InventoryTextTurnOff());
+        }
+
+    }
+    IEnumerator InventoryTextTurnOff() 
+    { 
+        yield return new WaitForSeconds(3);
+        {
+            inventoryFullText.transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 }
